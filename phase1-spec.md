@@ -1,5 +1,5 @@
 - [Introduction](#introduction)
-
+- [Required-Code-Changes](#required-code-changes)
 # Introduction
 This document will detail about the aproach we take in phase1 to implement the basic SRE functionalities.
 In Phase1 , we wanted to leverage the existing grafana functionalities and write the custom grafana functionalities to implement our features. In phase2 , we will gradually refactor the codebase and will write more independent modules.
@@ -57,6 +57,13 @@ awsexplorer.synectiks.net?contextId=accId inside iframe.
 awsexplorer will be a custom grafana application that has a grafana plugin app of Awsexplorer, that will call the cmdb api's to show logical product and services details and aws-api for element details. 
 
 **proposed approach2**
+
+SUI -> Cloudexplorer (Its a view for every account)
+    -> CloudServiceExplorer (its a view inside grafana)
+    -> ClusterExplorer (Its a diffrent URL for every cluster)
+    -> ClusterServiceExplorer -- It will be a view inside that cluster grafana url)
+
+
 
 awsexplorer will maintain views for every account and each of App and Data Services, like as below:
 
@@ -122,6 +129,10 @@ awsexplorer will implement the createView algorithm as follows:
             Inside AWS datasource we need to implement this kind of queries where corresponding to product/env / business service , we will get list of s3 buckets or lambda API's.
 
 
+# Required Code Changes
 
 
-
+|API | Description | Input | Output |
+|:---|:---|:---|:---|
+|/enableMonitoring/{elementId} | enable the monitoring for that cloud element| elementId in CMDB |  return success or failure code|
+|Row 2 Column1 | Row 2 Column 2 | Row 2 Column 3 |  Row 1 Column 4 |
