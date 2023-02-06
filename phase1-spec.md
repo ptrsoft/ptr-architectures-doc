@@ -57,6 +57,7 @@ awsexplorer.synectiks.net?contextId=accId inside iframe.
 awsexplorer will be a custom grafana application that has a grafana plugin app of Awsexplorer, that will call the cmdb api's to show logical product and services details and aws-api for element details. 
 
 **proposed approach2**
+
 awsexplorer will maintain views for every account and each of App and Data Services, like as below:
 
 aws-112234344-explorer
@@ -119,7 +120,7 @@ awsexplorer will implement the createView algorithm as follows:
             store the new view in database with proper naming convention, and update the view table.
 
             Inside AWS datasource we need to implement this kind of queries where corresponding to product/env / business service , we will get list of s3 buckets or lambda API's.
-             
+
 
 
 
