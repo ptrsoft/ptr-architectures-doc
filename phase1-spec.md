@@ -104,13 +104,14 @@ aws-112234344-LOGISTICS-PROD-BusinessService1-Data2-explorer(var1=ARN2 )
 
 So from SUI , wehn we click enable monitoring for any services , SUI will call a API to awsexplorer 
 
-/createView/ ? Accid=112234344 & PROD=HR & ENV=PROD & ELEMENT=RDS & ARN=arn1
+/createView/ ? Accid=112234344 & PROD=HR & ENV=PROD & ELEMENT=RDS & ARN=arn1 & logLocation="some path"
 
 awsexplorer will implement the createView algorithm as follows:
 
-        Get the template view 
+        Get the view template ( view is the composure of diffrent dashboards that collect metric / log data)
         for the AccId , get the right datasource and replace the datasource in the view
-        replace the ARN 
+        replace the ARN for metric data collection
+        replace the log location for log data collection
         store the new view in database with proper naming convention, and update the view table.
 
 For those cloud elements , where there is no single ARN , say for s3 and lambdas, where for a app and data 
@@ -126,7 +127,7 @@ awsexplorer will implement the createView algorithm as follows:
             The query that gets fired to datasource will have prod and env and business service
             store the new view in database with proper naming convention, and update the view table.
 
-            Inside AWS datasource we need to implement this kind of queries where corresponding to product/env / business service , we will get list of s3 buckets or lambda API's.
+Inside AWS datasource we need to implement this kind of queries where corresponding to product/env / business service , we will get list of s3 buckets or lambda API's.
 
 
 # Required Code Changes
@@ -135,4 +136,28 @@ awsexplorer will implement the createView algorithm as follows:
 |API | Description | Input | Output |
 |:---|:---|:---|:---|
 |/enableMonitoring/{elementId} | enable the monitoring for that cloud element| elementId in CMDB |  return success or failure code|
-|Row 2 Column1 | Row 2 Column 2 | Row 2 Column 3 |  Row 1 Column 4 |
+|/enableAlerts/{elementId} | enable the monitoring for that cloud element | elementId in CMDB |  return success or failure |
+|/createInput/{accountId}/?inputType=cloudWatchAPi & dataType = metrics | create the api based metric type input for a accounId | aws accountId |  return success or failure |
+|/createInput/{accountId}/?inputType=cloudWatchAPi & dataType = log | create the api based log type input for a accounId | aws accountId |  return success or failure |
+|/createInput/{accountId}/?inputType=promethus & dataType = metric | create the api based log type input for a accounId | aws accountId |  return success or failure |
+|/setLogLocation/{elementId}/?ElementType=EC2 | set the log location for the EC2 machine | EC2 machine id |  return success or failure |
+|/setLogLocation/{elementId}/?ElementType=RDS | set the log location for the RDS db | RDS id |  return success or failure |
+|/elementExplorer? ElementType=EC2 & PROD= HRMS & ENV =PROD & SERVICE = Admission & Ec2Id= 53545 | Open the EC2 explorer for a specific EC2 element | EC2 id or ARN |  return success or failure |
+|/elementExplorer? ElementType=RDS & PROD= HRMS & ENV =PROD & SERVICE = Admission & rdsId= 55646 | Open the RDS explorer for a specific RDS element | EC2 id or ARN |  return success or failure |
+
+# Api's Algorithm
+## enableMonitoring
+We could take two aproaches --
+1. Create dynamic views for every element and store inside the cmdb database, the underlying algo is :
+    From Catalogues filter all the Dashbooards available for that element
+    Check the dashboards (Performance / Availability...) with available Inputs and if there are matching inputs(datasources), import those dashboards by replacing the DS and ARN.
+
+2. Create grafana plugin App for every element and call them with ARN and log location as follows:
+
+/elementsExplorer?   Accid=112234344 & ElementType=EC2 & PROD= HRMS & ENV =PROD & SERVICE = Admission & Ec2Id= 53545 & logLocation="some path"
+
+/elementsExplorer/ ? Accid=112234344 & ElementType=RDS & PROD=HRMS & ENV=PROD & SERVICE = Admission  & ARN=arn1 & logLocation="some path"
+
+Every elmentExplorer App plugin will have the variables 
+    Var accId , Var ElementType , Var PRODUCT , Var ENV , Var Service , Var Arn , Var Loglocation
+
