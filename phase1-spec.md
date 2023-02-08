@@ -171,9 +171,18 @@ Every elmentExplorer App plugin will have the variables
 
 **UI Changes**
  - headless view API
+ - when we call /elementsExplorer/ ? Accid=112234344 & ElementType=RDS & PROD=HRMS & ENV=PROD & SERVICE = Admission  & ARN=arn1 & logLocation="some path", plugin variables gets set properly
+
  - element explorer App plugin that opens with the variable being set from the URL parameters
  - A datasource plugin  that takes AccId / Product / ENV / SVC and return metric / log / api data
 
+ - Write explorer for WAF / APiGw / RDS / DYNAMO / S3 / Lambda....
+
+ **Dashboard.js** - Futuristics
+
 **API Changes**
+
+    - datasource plugin  API implementation ( Accid / Prod / Env / SVC / ElementType / Arn or NoArn / Query ) -- (AwsApi / Aws-metric / Aws-logs)
+
 
 
