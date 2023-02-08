@@ -58,7 +58,8 @@ awsexplorer will be a custom grafana application that has a grafana plugin app o
 
 **proposed approach2**
 
-SUI -> Cloudexplorer (Its a view for every account)
+SUI 
+    -> Cloudexplorer (Its a view for every account)
 
     -> CloudServiceExplorer (its a view inside grafana)
 
