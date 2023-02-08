@@ -130,7 +130,7 @@ awsexplorer will implement the createView algorithm as follows:
 Inside AWS datasource we need to implement this kind of queries where corresponding to product/env / business service , we will get list of s3 buckets or lambda API's.
 
 
-# Required Code Changes
+# Required Api's
 
 
 |API | Description | Input | Output |
@@ -149,8 +149,9 @@ Inside AWS datasource we need to implement this kind of queries where correspond
 ## enableMonitoring
 We could take two aproaches --
 1. Create dynamic views for every element and store inside the cmdb database, the underlying algo is :
-    From Catalogues filter all the Dashbooards available for that element
-    Check the dashboards (Performance / Availability...) with available Inputs and if there are matching inputs(datasources), import those dashboards by replacing the DS and ARN.
+
+    - From Catalogues filter all the Dashbooards available for that element
+    - Check the dashboards (Performance / Availability...) with available Inputs and if there are matching inputs(datasources), import those dashboards by replacing the DS and ARN.
 
 2. Create grafana plugin App for every element and call them with ARN and log location as follows:
 
@@ -160,4 +161,15 @@ We could take two aproaches --
 
 Every elmentExplorer App plugin will have the variables 
     Var accId , Var ElementType , Var PRODUCT , Var ENV , Var Service , Var Arn , Var Loglocation
+
+
+# Required Code Changes
+
+**UI Changes**
+ - headless view API
+ - element explorer App plugin that opens with the variable being set from the URL parameters
+ - A datasource plugin  that takes AccId / Product / ENV / SVC and return metric / log / api data
+
+**API Changes**
+
 
