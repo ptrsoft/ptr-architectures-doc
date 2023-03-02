@@ -21,12 +21,26 @@ please refer to the diagrams below for phase1 and phase2 architecture:
 
 **SUI** - Our Stand Alone react based UI
 
-**AWS Cloud Explorer** -- This service will take every AWS account ID as context and will show all the cloud 
-elements (WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynamo /.. ) for the account and their element details.
+The UI will mostly call cmdb api and will show different clouds and their element details:
 
 Please refer the design details of AWS explorer as below:
 
 [AWSExplorer](https://www.figma.com/proto/tmzdMgCegtVSQLVgHR6uc3/Netlifi-Usecase-file?page-id=0%3A1&node-id=37%3A16358&viewport=184%2C-681%2C0.04&scaling=scale-down&starting-point-node-id=37%3A16358&show-proto-sidebar=1)  - Shows Cloud ELement Details 
+
+Whenever SUI  will show any specific App and Data Service Details, it will call the service explorer from remote grafana and render in iframe.
+
+
+**AWS Cloud Element Explorer** -- 
+
+This service will take every AWS account ID as context and will show all the cloud 
+elements (WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynamo /.. ) for the account and their element details.
+
+
+**Cluster Explorer** -- This will  show  details of all the individual Cluster elements 
+(products / services). 
+
+![alt](./images/CloudElements/cluster-explorer.jpg)
+
 
 
 **Service Explorer** -- This will  show  details of all the individual cloud elements 
@@ -38,11 +52,6 @@ Please refer the design details of AWS explorer as below:
 ![alt](./images/CloudElements/cloud-element4.jpg)
 
 
-**Cluster Explorer** -- This will  show  details of all the individual Cluster elements 
-(products / services). 
-
-![alt](./images/CloudElements/cluster-explorer.jpg)
-
 
 **AWS-API-Server** -- For collecting all the elements data , AWS Cloud Explorer will call the api server.
 
@@ -52,7 +61,6 @@ Please refer the design details of AWS explorer as below:
 
 # Process Flow
 
-# **Proposed approach1**
 
 SUI will call the cmdb api's to show every cloud accounts details. The information will be shown as below:
 
@@ -148,17 +156,24 @@ https://grafana.synectiks.net/rds-explorer/? DEPT=HR && PROD=HRMS && ENV=PROD &&
 
 Then the corresponding grafana App (rds-explorer) will be served as headless UI and it will be renedered inside the iframe in SUI.
 
-
-**proposed approach2**
+# How to implement Service Explorer 
+## ***Proposed approach1***
 
 SUI 
-    -> Cloudexplorer (Its a view for every account)
+    -> CloudServiceExplorer { its a app (that has many dashboards with variable) inside the grafana (which is maintained for all cloud accounts)}
 
-    -> CloudServiceExplorer (its a view inside grafana)
+    -> ClusterExplorer (Its a diffrent grafana URL for every cluster)
 
-    -> ClusterExplorer (Its a diffrent URL for every cluster)
+    -> ClusterServiceExplorer -- It will be a view inside that cluster grafana url )
 
-    -> ClusterServiceExplorer -- It will be a view inside that cluster grafana url)
+## ***Proposed approach2***
+
+SUI 
+    -> CloudServiceExplorer (its a view inside the grafana which is maintained for all cloud accounts )
+
+    -> ClusterExplorer (Its a diffrent grafana URL for every cluster)
+
+    -> ClusterServiceExplorer -- It will be a view inside that cluster grafana url )
 
 
 
