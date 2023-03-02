@@ -19,7 +19,7 @@ please refer to the diagrams below for phase1 and phase2 architecture:
 
 ## Terminology --
 
-**SUI** - Our Stand Alone react based UI
+### **SUI** - Our Stand Alone react based UI
 
 The UI will mostly call cmdb api and will show different clouds and their element details:
 
@@ -30,20 +30,20 @@ Please refer the design details of AWS explorer as below:
 Whenever SUI  will show any specific App and Data Service Details, it will call the service explorer from remote grafana and render in iframe.
 
 
-**AWS Cloud Element Explorer** -- 
+### **AWS Cloud Element Explorer** -- 
 
 This service will take every AWS account ID as context and will show all the cloud 
 elements (WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynamo /.. ) for the account and their element details.
 
 
-**Cluster Explorer** -- This will  show  details of all the individual Cluster elements 
+### **Cluster Explorer** -- This will  show  details of all the individual Cluster elements 
 (products / services). 
 
 ![alt](./images/CloudElements/cluster-explorer.jpg)
 
 
 
-**Service Explorer** -- This will  show  details of all the individual cloud elements 
+### **Service Explorer** -- This will  show  details of all the individual cloud elements 
 (WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynamo /.. ). 
 
 ![alt](./images/CloudElements/ServiceExplorer.jpg)
@@ -53,11 +53,11 @@ elements (WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynam
 
 
 
-**AWS-API-Server** -- For collecting all the elements data , AWS Cloud Explorer will call the api server.
+### **AWS-API-Server** -- For collecting all the elements data , AWS Cloud Explorer will call the api server.
 
-**Appkube-Catalogue** --  This service will have all the published dashboards / tools etc 
+### **Appkube-Catalogue** --  This service will have all the published dashboards / tools etc 
 
-**Appkube-cmdb** -- This service  will have the App / Data services details along with their topology details
+### **Appkube-cmdb** -- This service  will have the App / Data services details along with their topology details
 
 # Process Flow
 
