@@ -51,15 +51,16 @@ Please refer the design details of AWS explorer as below:
 **Appkube-cmdb** -- This service  will have the App / Data services details along with their topology details
 
 # Process Flow
-**proposed approach1**
+
+# **Proposed approach1**
+
 SUI will call the cmdb api's to show every cloud accounts details. The information will be shown as below:
-CMDB will have API for all the Data.
 
 ![alt](./images/home.jpg)
 
-When a user clicks on any AWS account id , SUI will call the CMDB provided Api's and will draw the topology of 
-every product enclaves,i.e  the elements(clusters/ firewall / Load Balancers / Nodes / Databases / Other services) 
-inside the product enclaves as follows:
+CMDB will have API for all the Data.
+
+When a user clicks on any AWS account id , SUI will call the CMDB provided Api's and will draw the topology of every product enclaves,i.e  the elements(clusters/ firewall / Load Balancers / Nodes / Databases / Other services)  inside the product enclaves as follows:
 
 Screens for any accountId navigation :
 
@@ -79,7 +80,10 @@ https://cmdb.synectiks.net/getCloudElementsInProductEnclave/? LandingZone=353454
 
 https://cmdb.synectiks.net/getClusterElements/? LandingZone=3534545454 && ProductEnclave= 435454 && ClusterId=657667
 
+## Cluster Explorer Navigation
+
 ***what to do for the clusters inside product enclaves ??***
+
 
 ![alt](./images/CloudElements/cluster-explorer.jpg)
 
@@ -90,6 +94,7 @@ The detail design of the cluster explorer will be published in figma.
 
 ### ***How do we do it technically ??***
 
+
 From SUI, whenever we will navigate to any individual cluster and click for detail, SUI  will call the grafana instance  of the cluster as follows:
 
 https://cluster1.synectiks.net/ 
@@ -98,17 +103,21 @@ SUI will collect the cluster URL from cmdb (CMDB has the cluster URL for each cl
 
 Later on(phase 2) we will address this with proxy.
 
+## Cluster Managed Services Explorer Navigation
+
 
 ***what to do for the App and Data services inside product enclaves that comes from cloud itself (cloud managed)??***
 
-    ![alt](./images/CloudElements/ServiceExplorer.jpg)
 
 
-    ![alt](./images/CloudElements/cloud-element4.jpg)
+![alt](./images/CloudElements/ServiceExplorer.jpg)
 
 
-When a user will navigate till any App and Data Services of the the product modules ,
-and click on them , it will open the **service explorer** from the reomte grafana inside the cluster.
+![alt](./images/CloudElements/cloud-element4.jpg)
+
+
+
+When a user will navigate till any App and Data Services of the the product modules ,and click on them , it will open the **service explorer** from the reomte grafana inside the cluster.
 
 ### ***How do we do it technically ??***
 
@@ -118,7 +127,10 @@ https://cluster1.synectiks.net/rds-explorer/? DEPT=HR && PROD=HRMS && ENV=PROD &
 
 Then the corresponding grafana App (rds-explorer) will be served as headless UI and it will be renedered inside the iframe in SUI.
 
-## ***what to do for the App and Data services inside cluster??***
+## Cloud Managed Services Explorer Navigation
+
+## ***what to do for the App and Data services that are managed by cloud itself??***
+
 
 ![alt](./images/CloudElements/ServiceExplorer.jpg)
 
@@ -126,8 +138,7 @@ Then the corresponding grafana App (rds-explorer) will be served as headless UI 
 ![alt](./images/CloudElements/cloud-element4.jpg)
 
 
-When a user will navigate till any App and Data Services of the the product modules ,
-and click on them , it will open the **service explorer** from the reomte grafana.
+When a user will navigate till any App and Data Services of the the product modules ,and click on them , it will open the **service explorer** from the reomte grafana.
 
 ### ***How do we do it technically ??***
 
