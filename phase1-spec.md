@@ -175,22 +175,17 @@ Then the corresponding grafana App (rds-explorer) will be served as headless UI 
 # How to implement Service Explorer 
 ## ***Proposed approach1***
 
-SUI 
-    -> CloudServiceExplorer { its a app (that has many dashboards with variable) inside the grafana (which is maintained for all cloud accounts)}
-
-    -> ClusterExplorer (Its a diffrent grafana URL for every cluster)
-
-    -> ClusterServiceExplorer -- It will be a view inside that cluster grafana url )
+* SUI-> <br>
+    * -> CloudServiceExplorer { its a app (that has many dashboards with variable) inside the grafana (which is maintained for all cloud accounts)}<br>
+    * -> ClusterExplorer (Its a diffrent grafana URL for every cluster)<br>
+    * -> ClusterServiceExplorer -- It will be a App (that has many dashboards with variable) inside that cluster grafana url )
 
 ## ***Proposed approach2***
 
-SUI 
-    -> CloudServiceExplorer (its a view inside the grafana which is maintained for all cloud accounts )
-
-    -> ClusterExplorer (Its a diffrent grafana URL for every cluster)
-
-    -> ClusterServiceExplorer -- It will be a view inside that cluster grafana url )
-
+* SUI-> <br>
+    * -> CloudServiceExplorer { its a view mainatined for each sepcific element (that has many dashboards with instanceId) inside the grafana (which is maintained for all cloud accounts)}<br>
+    * -> ClusterExplorer (Its a diffrent grafana URL for every cluster)<br>
+    * -> ClusterServiceExplorer -- It will be a view (that has many dashboards with instanceId) inside that cluster grafana url )
 
 
 awsexplorer will maintain views for every account and each of App and Data Services, like as below:
