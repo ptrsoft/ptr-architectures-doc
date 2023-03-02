@@ -38,14 +38,6 @@ This will open the grafana a greafana App( composed of different dashboards) and
 **Cluster Explorer** -- This will  show  details of all the individual Cluster elements 
 (products / services). 
 
-From SUI, whenever we will navigate to any individual cluster and click for detail, SUI  will call the grafana instance  of the cluster as follows:
-
-https://cluster1.synectiks.net/ 
-
-SUI will collect the cluster URL from cmdb (CMDB has the cluster URL for each cluster)
-
-
-Later on we will address this with proxy.
 
 
 **AWS-API-Server** -- For collecting all the elements data , AWS Cloud Explorer will call the api server.
@@ -85,7 +77,25 @@ https://cmdb.synectiks.net/getClusterElements/? LandingZone=3534545454 && Produc
 
 ***what to do for the clusters inside product enclaves ??***
 
+![alt](./images/CloudElements/cluster-explorer.jpg)
 
+
+When a user will navigate till any cluster inside the product enclave,and click on them , it will open the **Cluster explorer** from the reomte grafana.
+
+The detail design of the cluster explorer will be published in figma.
+
+****How do we do it technically ??****
+
+From SUI, whenever we will navigate to any individual cluster and click for detail, SUI  will call the grafana instance  of the cluster as follows:
+
+https://cluster1.synectiks.net/ 
+
+SUI will collect the cluster URL from cmdb (CMDB has the cluster URL for each cluster)
+
+Later on(phase 2) we will address this with proxy.
+
+
+***what to do for the App and Data services inside product enclaves that comes from cloud itself (cloud managed)??***
 
 When a user will navigate till any App and Data Services of the the product modules ,
 and click on them , it will open the **service explorer** from the reomte grafana.
@@ -98,6 +108,14 @@ Then the corresponding grafana App (rds-explorer) will be served as headless UI 
 
 ***what to do for the App and Data services inside cluster??***
 
+When a user will navigate till any App and Data Services of the the product modules ,
+and click on them , it will open the **service explorer** from the reomte grafana.
+
+SUI will call the service explorer as follows:
+
+https://grafana.synectiks.net/rds-explorer/? DEPT=HR && PROD=HRMS && ENV=PROD && MODULE=Admission Service=RDS-postgresql
+
+Then the corresponding grafana App (rds-explorer) will be served as headless UI and it will be renedered inside the iframe in SUI.
 
 
 **proposed approach2**
