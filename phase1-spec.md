@@ -16,7 +16,9 @@ please refer to the diagrams below for phase1 and phase2 architecture:
 
 
 # Phase1 Aproach
-Terminology --
+
+## Terminology --
+
 **SUI** - Our Stand Alone react based UI
 
 **AWS Cloud Explorer** -- This service will take every AWS account ID as context and will show all the cloud 
@@ -29,15 +31,17 @@ Please refer the design details of AWS explorer as below:
 
 **Service Explorer** -- This will  show  details of all the individual cloud elements 
 (WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynamo /.. ). 
-From SUI, whenever we will navigate to any individual service and click for detail, SUI  will call the grafana instance as follows:
 
-https://grafana.synectiks.net/? DEPT=HR && PROD=HRMS && ENV=PROD && MODULE=Admission && Service= PostgresqlDB
+![alt](./images/CloudElements/ServiceExplorer.jpg)
 
-This will open the grafana a greafana App( composed of different dashboards) and each dashboards variables will be equated to the values of parameters (DEPT=HR && PROD=HRMS && ENV=PROD && MODULE=Admission && Service= PostgresqlDB)   
+
+![alt](./images/CloudElements/cloud-element4.jpg)
+
 
 **Cluster Explorer** -- This will  show  details of all the individual Cluster elements 
 (products / services). 
 
+![alt](./images/CloudElements/cluster-explorer.jpg)
 
 
 **AWS-API-Server** -- For collecting all the elements data , AWS Cloud Explorer will call the api server.
@@ -84,7 +88,7 @@ When a user will navigate till any cluster inside the product enclave,and click 
 
 The detail design of the cluster explorer will be published in figma.
 
-****How do we do it technically ??****
+### ***How do we do it technically ??***
 
 From SUI, whenever we will navigate to any individual cluster and click for detail, SUI  will call the grafana instance  of the cluster as follows:
 
@@ -97,19 +101,35 @@ Later on(phase 2) we will address this with proxy.
 
 ***what to do for the App and Data services inside product enclaves that comes from cloud itself (cloud managed)??***
 
+    ![alt](./images/CloudElements/ServiceExplorer.jpg)
+
+
+    ![alt](./images/CloudElements/cloud-element4.jpg)
+
+
 When a user will navigate till any App and Data Services of the the product modules ,
-and click on them , it will open the **service explorer** from the reomte grafana.
+and click on them , it will open the **service explorer** from the reomte grafana inside the cluster.
+
+### ***How do we do it technically ??***
 
 SUI will call the service explorer as follows:
 
-https://grafana.synectiks.net/rds-explorer/? DEPT=HR && PROD=HRMS && ENV=PROD && MODULE=Admission Service=RDS-postgresql
+https://cluster1.synectiks.net/rds-explorer/? DEPT=HR && PROD=HRMS && ENV=PROD && MODULE=Admission Service=RDS-postgresql
 
 Then the corresponding grafana App (rds-explorer) will be served as headless UI and it will be renedered inside the iframe in SUI.
 
-***what to do for the App and Data services inside cluster??***
+## ***what to do for the App and Data services inside cluster??***
+
+![alt](./images/CloudElements/ServiceExplorer.jpg)
+
+
+![alt](./images/CloudElements/cloud-element4.jpg)
+
 
 When a user will navigate till any App and Data Services of the the product modules ,
 and click on them , it will open the **service explorer** from the reomte grafana.
+
+### ***How do we do it technically ??***
 
 SUI will call the service explorer as follows:
 
