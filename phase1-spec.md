@@ -35,8 +35,13 @@ Whenever SUI  will show any specific App and Data Service Details, it will call 
 
 ### **AWS Cloud Element Explorer** -- 
 
-This service will take every AWS account ID as context and will show all the cloud elements (WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynamo /.. ) for the account and their element details.
+The purpose of this service is to render the explorer for every App and Data Services in cloud. This service is a remote grafana that has a inbuilt ***Cloud Datasource*** . This service will have explorer for all cloud elements (WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynamo /.. ).
 
+This remote grafana instance will either keep grafana Apps or Appkube Views for cloud elements(to be decided)
+
+For any App or Data services , SUI will call the remote grafana url with parameters and display the results in iframe in phase1.
+
+Phase2 , SUI will do only api calls and render directly in UI via proxy grafana API's server.
 ---
 
 ### **Cluster Explorer** -- This will  show  details of all the individual Cluster elements 
@@ -54,6 +59,8 @@ This service will take every AWS account ID as context and will show all the clo
 
 
 ![alt](./images/CloudElements/cloud-element4.jpg)
+
+Theere would be two aproaches to display the services belong to cluster or cloud managed.
 
 ---
 
