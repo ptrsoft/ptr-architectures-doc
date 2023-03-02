@@ -18,6 +18,7 @@ please refer to the diagrams below for phase1 and phase2 architecture:
 # Phase1 Aproach
 Terminology --
 **SUI** - Our Stand Alone react based UI
+
 **AWS Cloud Explorer** -- This service will take every AWS account ID as context and will show all the cloud 
 elements (WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynamo /.. ) for the account and their element details.
 
@@ -25,9 +26,32 @@ Please refer the design details of AWS explorer as below:
 
 [AWSExplorer](https://www.figma.com/proto/tmzdMgCegtVSQLVgHR6uc3/Netlifi-Usecase-file?page-id=0%3A1&node-id=37%3A16358&viewport=184%2C-681%2C0.04&scaling=scale-down&starting-point-node-id=37%3A16358&show-proto-sidebar=1)  - Shows Cloud ELement Details 
 
+
+**Service Explorer** -- This will  show  details of all the individual cloud elements 
+(WAF / APIGw / CDN / S3 / Route53 / VPC -> EKS/ ECS / EC2 / RDS / Dynamo /.. ). 
+From SUI, whenever we will navigate to any individual service and click for detail, SUI  will call the grafana instance as follows:
+
+https://grafana.synectiks.net/? DEPT=HR && PROD=HRMS && ENV=PROD && MODULE=Admission && Service= PostgresqlDB
+
+This will open the grafana a greafana App( composed of different dashboards) and each dashboards variables will be equated to the values of parameters (DEPT=HR && PROD=HRMS && ENV=PROD && MODULE=Admission && Service= PostgresqlDB)   
+
+**Cluster Explorer** -- This will  show  details of all the individual Cluster elements 
+(products / services). 
+
+From SUI, whenever we will navigate to any individual cluster and click for detail, SUI  will call the grafana instance  of the cluster as follows:
+
+https://cluster1.synectiks.net/ 
+
+SUI will collect the cluster URL from cmdb (CMDB has the cluster URL for each cluster)
+
+
+Later on we will address this with proxy.
+
+
 **AWS-API-Server** -- For collecting all the elements data , AWS Cloud Explorer will call the api server.
 
 **Appkube-Catalogue** --  This service will have all the published dashboards / tools etc 
+
 **Appkube-cmdb** -- This service  will have the App / Data services details along with their topology details
 
 # Process Flow
@@ -37,24 +61,44 @@ CMDB will have API for all the Data.
 
 ![alt](./images/home.jpg)
 
-When a user clicks on any AWS account id , SUI will open up a HTML iframe page 
-**iframe**
+When a user clicks on any AWS account id , SUI will call the CMDB provided Api's and will draw the topology of 
+every product enclaves,i.e  the elements(clusters/ firewall / Load Balancers / Nodes / Databases / Other services) 
+inside the product enclaves as follows:
 
-Link --awsexplorer.synectiks.net?contextId=accId
-**iframe**
+Screens for any accountId navigation :
 
-Inside the iframe the  following screens will open
 ![alt](./images/CloudElements/cloud-element1.jpg)
 
 ![alt](./images/CloudElements/cloud-element2.jpg)
 
 ![alt](./images/CloudElements/cloud-element3.jpg)
 
-The above screens will come from awsexplorer where SUI will pass the accounID as context like below:
+SUI will call the API's as follows:
 
-awsexplorer.synectiks.net?contextId=accId inside iframe.
+https://cmdb.synectiks.net/getAllCloudElements/? LandingZone=3534545454 
 
-awsexplorer will be a custom grafana application that has a grafana plugin app of Awsexplorer, that will call the cmdb api's to show logical product and services details and aws-api for element details. 
+https://cmdb.synectiks.net/getProductEnclaves/? LandingZone=3534545454
+
+https://cmdb.synectiks.net/getCloudElementsInProductEnclave/? LandingZone=3534545454 && ProductEnclave= 435454
+
+https://cmdb.synectiks.net/getClusterElements/? LandingZone=3534545454 && ProductEnclave= 435454 && ClusterId=657667
+
+***what to do for the clusters inside product enclaves ??***
+
+
+
+When a user will navigate till any App and Data Services of the the product modules ,
+and click on them , it will open the **service explorer** from the reomte grafana.
+
+SUI will call the service explorer as follows:
+
+https://grafana.synectiks.net/rds-explorer/? DEPT=HR && PROD=HRMS && ENV=PROD && MODULE=Admission Service=RDS-postgresql
+
+Then the corresponding grafana App (rds-explorer) will be served as headless UI and it will be renedered inside the iframe in SUI.
+
+***what to do for the App and Data services inside cluster??***
+
+
 
 **proposed approach2**
 
