@@ -180,6 +180,37 @@ Then the corresponding grafana App (rds-explorer) will be served as headless UI 
     * -> ClusterExplorer (Its a diffrent grafana URL for every cluster)<br>
     * -> ClusterServiceExplorer -- It will be a App (that has many dashboards with variable) inside that cluster grafana url )
 
+## How to develop Service Explorer in this aproach
+
+We will write grafana App for each explorer. Each App will be created with a mix of different dashboards and each dashboards will have the following variables:
+
+PRODUCT / ENVIRONMENT / MODULE / SERVICE
+
+SUI will call the element explorer (say RDS explorer)
+
+http://grafana.synectiks.net/a/rds-explorer-app?orgId=1&var-product=HRMS&var-env=production&var-module=admission&var-service=rds-postgresql&from=now-24h&to=now
+
+SUI can know from the elementData , what sort of explorer need to be called , say for Ec2 machine , ec2-explorer,
+for RDS-potgresql database, it will call rds-postgresql explorer.
+
+### How the backend of DataSource will be implemented? 
+<br>
+
+---
+### How developers will create the dashboards that will be used in element explorer App? 
+<br>
+
+---
+
+![alt](./images/CloudElements/datasource1.jpg)
+
+Developers can select the product , environment , module , App/Data service details in datasource query.
+
+The datasource frontend ui can call the CMDB api to know the element type( Node / RDS / Dynamo etc) and its 
+unique id.
+
+The Datasouce UI should fire the Metrics/ Log / Trace / Api  queries 
+
 ## ***Proposed approach2***
 
 * SUI-> <br>
