@@ -209,7 +209,20 @@ Developers can select the product , environment , module , App/Data service deta
 The datasource frontend ui can call the CMDB api to know the element type( Node / RDS / Dynamo etc) and its 
 unique id.
 
-The Datasouce UI should fire the Metrics/ Log / Trace / Api  queries 
+The Datasouce UI should fire the Metrics/ Log / Trace / Api  queries with parameters (product , environment , module , App/Data service) 
+
+The Datasource backend will fetch the query response as follows:
+
+* For the (product , environment , module , App/Data service) combination , get the landing zone (Aws Account Id) for the service.
+* For the landing zone , get credentials(role arn) etc from vault service and initailize the sdk credential.
+* For EC2 / RDS  etc where we query with unique instance id , we wil find the element type and id from the CMDB api.
+    * In case of Lambda , where for a particular App service, we run multiple lambdas , we will find the list of
+    lambda functions for the (product , environment , module , App service) combination and issue the query for those lambdas.
+* Then we will fire the query with the dimension being equated with instanceId or RDS id or Dynamo table etc
+
+
+
+
 
 ## ***Proposed approach2***
 
