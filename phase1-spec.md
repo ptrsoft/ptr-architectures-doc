@@ -347,5 +347,11 @@ Every elmentExplorer App plugin will have the variables
 
     - datasource plugin  API implementation ( Accid / Prod / Env / SVC / ElementType / Arn or NoArn / Query ) -- (AwsApi / Aws-metric / Aws-logs)
 
+# CMDB Population 
+
+We wil add product and env metadata inside Appkube platform from the 
+
+
+
 
 
