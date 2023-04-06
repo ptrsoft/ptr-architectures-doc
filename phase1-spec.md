@@ -349,7 +349,7 @@ Every elmentExplorer App plugin will have the variables
 
 # CMDB Population 
 
-We wil add product and env metadata inside Appkube platform from the 
+We wil add product/env/modules/ (App & Data) services metadata inside Appkube platform from the UI (manually) where the product and Env is not created from the Appkube automation Engine. Every product/env  will have association with Departments. Unless a full fledge UI is developed and we have the capability to add environments / modules / app & Data services inside modules, we can have them imported through a JSON     
 
 
 
