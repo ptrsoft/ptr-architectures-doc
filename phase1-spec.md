@@ -352,6 +352,14 @@ Every elmentExplorer App plugin will have the variables
 We wil add product/env/modules/ (App & Data) services metadata inside Appkube platform from the UI (manually) where the product and Env is not created from the Appkube automation Engine. Every product/env  will have association with Departments. Unless a full fledge UI is developed and we have the capability to add environments / modules / app & Data services inside modules, we can have them imported through a JSON     
 
 
+# Different Table Structure
 
+## Cloud_Element 
+This table will hold all the discovered cloud elements for any specific AWS account.
 
+|Column Name | Description | type | format |
+|:---|:---|:---|:---|
+|id | idf of the element | int |unique id |
+|elementType | Type of the service it belongs | string | EC2/EKS/ECS/LAMBDA/RDS....|
+|hardwareLocation| Which account and whic VPC does it belong | jsonb | |
 
