@@ -361,5 +361,5 @@ This table will hold all the discovered cloud elements for any specific AWS acco
 |:---|:---|:---|:---|
 |id | idf of the element | int |unique id |
 |elementType | Type of the service it belongs | string | EC2/EKS/ECS/LAMBDA/RDS....|
-|hardwareLocation| Which account and whic VPC does it belong | jsonb | |
+|hardwareLocation| Which account and whic VPC does it belong | jsonb |[JSONlink](./jsons/Cloud_Element-hardwareLocation.json)|
 
