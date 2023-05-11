@@ -1,0 +1,22 @@
+{
+    "HOSTEDSERVICES": [
+      {
+        "associatedDepartment" : "HR",
+        "associatedProduct" :"HRMS",
+        "associatedEnv" :"PROD",
+        "associatedService" :"Recruitment",
+        "serviceNature" :"Business",
+        "serviceType" :"App",
+        "serviceDesc" :"Recruitment-Go-Api-Server"
+      },
+      {
+        "associatedDepartment" : "HR",
+        "associatedProduct" :"HRMS",
+        "associatedEnv" :"PROD",
+        "associatedService" :"Salary",
+        "serviceNature" :"Business",
+        "serviceType" :"App",
+        "serviceDesc" :"Salary-NodeJs-Api-Server"
+      }
+    ]
+  }

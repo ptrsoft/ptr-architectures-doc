@@ -1,0 +1,44 @@
+{
+    "Performance": {
+      "Dashboards": [
+        {
+          "dashBoardId": "99",
+          "dashBoardHash": "536363",
+          "dashBoardName": "EC2 Disk Performance"
+        },
+        {
+          "dashBoardId": "100",
+          "dashBoardHash": "786876363",
+          "dashBoardName": "EC2 CPU Performance"
+        }
+      ]
+    },
+    "AVAILABILITY": {
+      "Dashboards": [
+        {
+          "dashBoardId": "99",
+          "dashBoardHash": "536363",
+          "dashBoardName": "EC2 Uptime"
+        },
+        {
+          "dashBoardId": "100",
+          "dashBoardHash": "786876363",
+          "dashBoardName": "EC2 Disk Availability"
+        }
+      ]
+    },
+    "RELIABILITY": {
+      "Dashboards": [
+        {
+          "dashBoardId": "99",
+          "dashBoardHash": "536363",
+          "dashBoardName": "EC2 Errors"
+        },
+        {
+          "dashBoardId": "100",
+          "dashBoardHash": "786876363",
+          "dashBoardName": "EC2 DNS Errors"
+        }
+      ]
+    }
+  }

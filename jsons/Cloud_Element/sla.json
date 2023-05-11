@@ -1,0 +1,26 @@
+{
+    "CURRENTSLA": {
+      "performance": "99",
+      "availability": "100",
+      "reliability": "99",
+      "security": "78",
+      "endusage": "99.9",
+      "dataprotection": "99"
+    },
+    "WEEKLYSLA": {
+      "performance": "99",
+      "availability": "99.99",
+      "reliability": "99",
+      "security": "78",
+      "endusage": "99.9",
+      "dataprotection": "99"
+    },
+    "MONTHLYSLA": {
+      "performance": "99",
+      "availability": "100",
+      "reliability": "98",
+      "security": "78",
+      "endusage": "99.9",
+      "dataprotection": "99"
+    }
+  }

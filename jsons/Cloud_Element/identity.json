@@ -1,0 +1,5 @@
+{
+    "elementType": "EC2",
+    "instanceId": "i-636364",
+    "instanceName": "cluster-node1"
+}

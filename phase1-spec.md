@@ -357,9 +357,56 @@ We wil add product/env/modules/ (App & Data) services metadata inside Appkube pl
 ## Cloud_Element 
 This table will hold all the discovered cloud elements for any specific AWS account.
 
-|Column Name | Description | type | format |
+|Column Name | Description | type | Format-Example|
 |:---|:---|:---|:---|
-|id | idf of the element | int |unique id |
+|id | id of the element | int |unique id |
 |elementType | Type of the service it belongs | string | EC2/EKS/ECS/LAMBDA/RDS....|
-|hardwareLocation| Which account and whic VPC does it belong | jsonb |[JSONlink](./jsons/Cloud_Element-hardwareLocation.json)|
+|cloudIdentity | The ARN or any unique identity for the resource|jsonb | [JSONlink](./jsons/Cloud_Element/identity.json)|
+|hardwareLocation| Which account and which VPC does it belong | jsonb |[JSONlink](./jsons/Cloud_Element/hardwareLocation.json)|
+|hostedServices| Which business and common services it hosts | jsonb |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|
+|SLA| Its calculated SLA scores | jsonb |[JSONlink](./jsons/Cloud_Element/sla.json)|
+|COST| Its calculated Cost| jsonb |[JSONlink](./jsons/Cloud_Element/cost.json)|
+|VIEW| All the Dashboards that is associated with the element | jsonb |[JSONlink](./jsons/Cloud_Element/view.json)|
+|CONFIG| Element Config Json  | jsonb |[JSONlink](./jsons/Cloud_Element/config.json)|
+|COMPLIANCE| ELement Compliance Json | jsonb |[JSONlink](./jsons/Cloud_Element/compliance.json)|
 
+## Snapshot of Cloud_Element  table
+
+|id |elementType | cloudIdentity | hardwareLocation | hostedServices | SLA | Cost | VIEW | CONFIG | COMPLIANCE|
+|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
+|1234 | EKS |[JSONlink](./jsons/Cloud_Element/identity.json) | [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+|1235 | ECS |[JSONlink](./jsons/Cloud_Element/identity.json) | [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+|1236 | EC2 |[JSONlink](./jsons/Cloud_Element/identity.json)| [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+|1237 | LAMBDA |[JSONlink](./jsons/Cloud_Element/identity.json)| [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+|1238 | RDS |[JSONlink](./jsons/Cloud_Element/identity.json)| [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+|1239 | DYNAMO |[JSONlink](./jsons/Cloud_Element/identity.json)| [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+|1241 | ApiGw |[JSONlink](./jsons/Cloud_Element/identity.json)| [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+|1242 | NLB |[JSONlink](./jsons/Cloud_Element/identity.json)| [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+|1243 | OpenSearch |[JSONlink](./jsons/Cloud_Element/identity.json)| [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+|1244 | CacheDB |[JSONlink](./jsons/Cloud_Element/identity.json)| [JSONlink](./jsons/Cloud_Element/hardwareLocation.json) |[JSONlink](./jsons/Cloud_Element/hostedServices.json)|SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+
+
+## Micro_Services
+This table will hold all the discovered cloud elements for any specific AWS account.
+
+|Column Name | Description | type | Format-Example|
+|:---|:---|:---|:---|
+|id | id of the service | int |unique id |
+|name | name of the service | string |unique |
+|department | department it belongs | string |unique |
+|product | product of the service | string |unique |
+|environment | environment of the service | string |unique |
+|serviceType | Type of the service it belongs | string | Business ,Common  |
+|serviceTopology| how its composed of Gw/LB/AppLayer/DataLayer| jsonb |[JSONlink](./jsons/Micro_Service/serviceTopology.json)|
+|SLA| Its calculated SLA scores | jsonb |[JSONlink](./jsons/Cloud_Element/sla.json)|
+|COST| Its calculated Cost| jsonb |[JSONlink](./jsons/Cloud_Element/cost.json)|
+|VIEW| All the Dashboards that is associated with the element | jsonb |[JSONlink](./jsons/Cloud_Element/view.json)|
+|CONFIG| Element Config Json  | jsonb |[JSONlink](./jsons/Cloud_Element/config.json)|
+|COMPLIANCE| ELement Compliance Json | jsonb |[JSONlink](./jsons/Cloud_Element/compliance.json)|
+
+
+## Snapshot of Micro_Services table
+
+|id |Name| Department |  Product | Environment | serviceType |serviceTopology| SLA | Cost | VIEW | CONFIG | COMPLIANCE|
+|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
+|1255 | Admission |HR |HRMS|PROD| BUSINESS|[JSONlink](./jsons/Micro_Service/serviceTopology.json) |SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|

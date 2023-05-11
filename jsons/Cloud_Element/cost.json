@@ -1,0 +1,23 @@
+{
+    "DAILYCOST": {
+      "Day1": "99",
+      "Day2": "100",
+      "Day3": "99",
+      "Day4": "100",
+      "Day5": "99",
+      "Day6": "100",
+      "Day7": "100"
+    },
+    "WEEKLYCOST": {
+      "Week1": "99",
+      "Week2": "100",
+      "Week3": "99",
+      "Week4": "100"
+    },
+    "MONTHLYCOST": {
+      "Month1": "99",
+      "Month2": "100",
+      "Month3": "99",
+      "Month4": "100"
+    }
+  }
