@@ -1,0 +1,10 @@
+{
+  "id":1,
+	"elementId": "element-1",
+	"elementType": "EC2",
+	"arn": "aws-ec2-element1-arn",
+	"hardwareLocation": {
+		"landingZone": 12367788899,
+		"productEnlave": "vpc-133"
+	}
+}

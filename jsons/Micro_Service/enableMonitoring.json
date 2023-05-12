@@ -1,0 +1,102 @@
+{
+	"id": 1,
+	"department": {
+		"id": 2
+	},
+	"deploymentEnvironment": {
+		"id": 2
+	},
+	"name": "Admission",
+	"product": "HR",
+	"serviceType": "BUSINESS",
+	"serviceTopology": {
+		"ApiGateway": {
+			"name": "Admission Api Gw",
+			"elementType": "AWS Api GW",
+			"CloudElementId": "1241"
+		},
+		"Balancer": {
+			"name": "Admission Service LB",
+			"elementType": "AWS NLB",
+			"CloudElementId": "1242"
+		},
+		"App": {
+			"name": "Admission Go Api Server",
+			"elementType": "AWS EKS",
+			"CloudElementId": "1234",
+			"UsesDataServices": [
+				{
+					"name": "Admission Cache DB",
+					"elementType": "AWS Redis Cache",
+					"CloudElementId": "1244"
+				},
+				{
+					"name": "Admission RDS Postgresql DB",
+					"elementType": "AWS RDS",
+					"CloudElementId": "1238"
+				},
+				{
+					"name": "Admission Search DB",
+					"elementType": "AWS Opensearch",
+					"CloudElementId": "1243"
+				}
+			],
+			"DependOnOtherServices": [
+				{
+					"serviceName": "Fees",
+					"serviceId": "12334",
+					"Api's": []
+				}
+			]
+		}
+	},
+	"slaJson": {},
+	"costJson": {},
+	"viewJson": {
+		"alerts": [],
+		"endusage": [],
+		"security": [],
+		"serviceId": "77452",
+		"compliance": [],
+		"performance": [
+			{
+				"id": "1143",
+				"uid": "qDnbGMyVk",
+				"url": "/d/qDnbGMyVk/performance_api-gateway_unawy",
+				"slug": "performance_api-gateway_unawy",
+				"accountId": "897373451",
+				"serviceName": "FileRepo",
+				"serviceType": "App",
+				"associatedOU": "Synectiks",
+				"cloudElement": "API-Gateway",
+				"associatedEnv": "PROD",
+				"serviceNature": "Common",
+				"associatedDept": "HR",
+				"cloudElementId": "r4e1pz7k18",
+				"serviceInstance": "FileRepo-app1",
+				"associatedProduct": "HRMS"
+			},
+			{
+				"id": "1144",
+				"uid": "9c7xGMsVk",
+				"url": "/d/9c7xGMsVk/performance_api-gateway_netaa",
+				"slug": "performance_api-gateway_netaa",
+				"accountId": "897373451",
+				"serviceName": "FileRepo",
+				"serviceType": "App",
+				"associatedOU": "Synectiks",
+				"cloudElement": "API-Gateway",
+				"associatedEnv": "PROD",
+				"serviceNature": "Common",
+				"associatedDept": "HR",
+				"cloudElementId": "r4e1pz7k18",
+				"serviceInstance": "FileRepo-app1",
+				"associatedProduct": "HRMS"
+			}
+		],
+		"reliability": [],
+		"availability": []
+	},
+	"configJson": {},
+	"complianceJson": {}
+}

@@ -1,0 +1,18 @@
+{
+    "createdBy": "",
+    "createdOn": "2023-04-08T12:11:57.091",
+    "updatedBy": "",
+    "updatedOn": "2023-04-08T12:11:57.091",
+    "id": 4,
+    "name": "LOGISTICS",
+    "status": null,
+    "organization": {
+        "createdBy": "",
+        "createdOn": "2023-04-05T22:46:51.241",
+        "updatedBy": "",
+        "updatedOn": "2023-05-05T11:44:01.621",
+        "id": 2,
+        "name": "test-org-2",
+        "status": "putonhold"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "id":1,
+    "summaryJson":  {
+    "ResourceCounts": [
+      {
+        "Count": 207,
+        "ResourceType": "AWS::Lambda::Function"
+      },
+      {
+        "Count": 100,
+        "ResourceType": "AWS::S3::Bucket"
+      }
+    ],
+    "TotalDiscoveredResources": 307
+  },
+    "cloudEnvironment":{
+        "id": 3
+    }
+}

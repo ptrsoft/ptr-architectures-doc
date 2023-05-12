@@ -1,0 +1,38 @@
+{
+	"elementId": "element-1",
+	"elementType": "EC2",
+	"arn": "aws-ec2-element1-arn",
+	"hardwareLocation": {
+		"landingZone": 12367788899,
+		"productEnlave": "vpc-122"
+	},
+	"hostedServices": [
+		{
+			"associatedDepartment": "HR",
+			"associatedProduct": "HRMS",
+			"associatedEnv": "PROD",
+			"associatedService": "Recruitment",
+			"serviceNature": "Business",
+			"serviceType": "App",
+			"serviceDesc": "Recruitment-Go-Api-Server"
+		},
+		{
+			"associatedDepartment": "HR",
+			"associatedProduct": "HRMS",
+			"associatedEnv": "PROD",
+			"associatedService": "Salary",
+			"serviceNature": "Business",
+			"serviceType": "App",
+			"serviceDesc": "Salary-NodeJs-Api-Server"
+		}
+	],
+	"slaJson": {},
+	"costJson": {},
+	"viewJson": {},
+	"configJson": {},
+	"complianceJson": {},
+	"tagStatus": "TAGGED",
+	"cloudEnvironment": {
+		"id": 2
+	}
+}

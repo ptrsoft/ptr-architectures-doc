@@ -1,0 +1,53 @@
+{
+    "createdBy": "",
+    "createdOn": "2023-05-12T13:19:46.929",
+    "updatedBy": "",
+    "updatedOn": "2023-05-12T13:19:46.929",
+    "id": 1,
+    "summaryJson": {
+        "ResourceCounts": [
+            {
+                "Count": 207,
+                "ResourceType": "AWS::Lambda::Function"
+            },
+            {
+                "Count": 143,
+                "ResourceType": "AWS::S3::Bucket"
+            }
+        ],
+        "TotalDiscoveredResources": 350
+    },
+    "cloudEnvironment": {
+        "createdBy": "",
+        "createdOn": "2023-04-24T18:29:07.753",
+        "updatedBy": "",
+        "updatedOn": "2023-04-24T18:29:07.753",
+        "id": 2,
+        "name": "LOGISTICS",
+        "description": "AWS account for LOGISTICS department",
+        "accountId": "567373484",
+        "status": null,
+        "cloud": "AWS",
+        "displayName": "LOGISTICS",
+        "roleArn": "arn:aws:iam::567373484:role/CrossAccount",
+        "externalId": "abcd",
+        "department": {
+            "createdBy": "",
+            "createdOn": "2023-04-08T12:11:57.091",
+            "updatedBy": "",
+            "updatedOn": "2023-04-08T12:11:57.091",
+            "id": 4,
+            "name": "LOGISTICS",
+            "status": null,
+            "organization": {
+                "createdBy": "",
+                "createdOn": "2023-04-05T22:46:51.241",
+                "updatedBy": "",
+                "updatedOn": "2023-05-05T11:44:01.621",
+                "id": 2,
+                "name": "test-org-2",
+                "status": "putonhold"
+            }
+        }
+    }
+}

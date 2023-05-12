@@ -1,0 +1,9 @@
+{
+    "description": "AZURE account for R&D department",
+    "displayName": "AZURE R&D",
+    "accountId":"345678",
+    "cloud":"AZURE",
+    "department":{
+        "id": 8
+    }
+}

@@ -1,0 +1,138 @@
+[
+    {
+        "createdBy": "",
+        "createdOn": "2023-04-08T12:11:57.091",
+        "updatedBy": "",
+        "updatedOn": "2023-04-08T12:11:57.091",
+        "id": 4,
+        "name": "LOGISTICS",
+        "status": null,
+        "organization": {
+            "createdBy": "",
+            "createdOn": "2023-04-05T22:46:51.241",
+            "updatedBy": "",
+            "updatedOn": "2023-05-05T11:44:01.621",
+            "id": 2,
+            "name": "test-org-2",
+            "status": "putonhold"
+        }
+    },
+    {
+        "createdBy": "",
+        "createdOn": "2023-04-12T11:22:21.014",
+        "updatedBy": "",
+        "updatedOn": "2023-04-12T11:22:21.014",
+        "id": 5,
+        "name": "QA",
+        "status": null,
+        "organization": {
+            "createdBy": "",
+            "createdOn": "2023-04-05T22:46:51.241",
+            "updatedBy": "",
+            "updatedOn": "2023-05-05T11:44:01.621",
+            "id": 2,
+            "name": "test-org-2",
+            "status": "putonhold"
+        }
+    },
+    {
+        "createdBy": "",
+        "createdOn": "2023-04-24T17:51:41.531",
+        "updatedBy": "",
+        "updatedOn": "2023-04-24T17:51:41.531",
+        "id": 7,
+        "name": "FINANCE",
+        "status": null,
+        "organization": {
+            "createdBy": "",
+            "createdOn": "2023-04-05T22:46:51.241",
+            "updatedBy": "",
+            "updatedOn": "2023-05-05T11:44:01.621",
+            "id": 2,
+            "name": "test-org-2",
+            "status": "putonhold"
+        }
+    },
+    {
+        "createdBy": "",
+        "createdOn": "2023-04-24T17:52:15.85",
+        "updatedBy": "",
+        "updatedOn": "2023-04-24T17:52:15.85",
+        "id": 8,
+        "name": "R&D",
+        "status": null,
+        "organization": {
+            "createdBy": "",
+            "createdOn": "2023-04-05T22:46:51.241",
+            "updatedBy": "",
+            "updatedOn": "2023-05-05T11:44:01.621",
+            "id": 2,
+            "name": "test-org-2",
+            "status": "putonhold"
+        }
+    },
+    {
+        "createdBy": "",
+        "createdOn": "2023-04-24T17:51:27.104",
+        "updatedBy": "",
+        "updatedOn": "2023-04-24T17:51:27.104",
+        "id": 6,
+        "name": "HUMAN RESOURCE",
+        "status": null,
+        "organization": {
+            "createdBy": "",
+            "createdOn": "2023-04-05T22:46:51.241",
+            "updatedBy": "",
+            "updatedOn": "2023-05-05T11:44:01.621",
+            "id": 2,
+            "name": "test-org-2",
+            "status": "putonhold"
+        }
+    },
+    {
+        "createdBy": "",
+        "createdOn": "2023-04-24T17:55:08.777",
+        "updatedBy": "",
+        "updatedOn": "2023-04-24T17:55:08.777",
+        "id": 10,
+        "name": "IT NETWORKING",
+        "status": null,
+        "organization": {
+            "createdBy": "",
+            "createdOn": "2023-04-05T22:46:51.241",
+            "updatedBy": "",
+            "updatedOn": "2023-05-05T11:44:01.621",
+            "id": 2,
+            "name": "test-org-2",
+            "status": "putonhold"
+        }
+    },
+    {
+        "createdBy": "",
+        "createdOn": "2023-04-24T17:55:23.178",
+        "updatedBy": "",
+        "updatedOn": "2023-04-24T17:55:23.178",
+        "id": 11,
+        "name": "MONITORING",
+        "status": null,
+        "organization": {
+            "createdBy": "",
+            "createdOn": "2023-04-05T22:46:51.241",
+            "updatedBy": "",
+            "updatedOn": "2023-05-05T11:44:01.621",
+            "id": 2,
+            "name": "test-org-2",
+            "status": "putonhold"
+        }
+    },
+    {
+        "createdBy": "",
+        "createdOn": "2023-04-24T17:52:30.75",
+        "updatedBy": "",
+        "updatedOn": "2023-04-24T17:52:30.75",
+        "id": 9,
+        "name": "PRODUCTION",
+        "status": null,
+        "organization": null
+    }
+]

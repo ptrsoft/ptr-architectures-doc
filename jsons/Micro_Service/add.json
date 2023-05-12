@@ -1,0 +1,57 @@
+{
+	"department": {
+		"id": 2
+	},
+	"deploymentEnvironment": {
+		"id": 2
+	},
+	"name": "Admission",
+	"product": "HR",
+	"serviceType": "BUSINESS",
+	"serviceTopology": {
+		"ApiGateway": {
+			"name": "Admission Api Gw",
+			"elementType": "AWS Api GW",
+			"CloudElementId": "1241"
+		},
+		"Balancer": {
+			"name": "Admission Service LB",
+			"elementType": "AWS NLB",
+			"CloudElementId": "1242"
+		},
+		"App": {
+			"name": "Admission Go Api Server",
+			"elementType": "AWS EKS",
+			"CloudElementId": "1234",
+			"UsesDataServices": [
+				{
+					"name": "Admission Cache DB",
+					"elementType": "AWS Redis Cache",
+					"CloudElementId": "1244"
+				},
+				{
+					"name": "Admission RDS Postgresql DB",
+					"elementType": "AWS RDS",
+					"CloudElementId": "1238"
+				},
+				{
+					"name": "Admission Search DB",
+					"elementType": "AWS Opensearch",
+					"CloudElementId": "1243"
+				}
+			],
+			"DependOnOtherServices": [
+				{
+					"serviceName": "Fees",
+					"serviceId": "12334",
+					"Api's": []
+				}
+			]
+		}
+	},
+	"slaJson": {},
+	"costJson": {},
+	"viewJson": {},
+	"configJson": {},
+	"complianceJson": {}
+}

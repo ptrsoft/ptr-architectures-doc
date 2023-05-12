@@ -410,3 +410,192 @@ This table will hold all the discovered cloud elements for any specific AWS acco
 |id |Name| Department |  Product | Environment | serviceType |serviceTopology| SLA | Cost | VIEW | CONFIG | COMPLIANCE|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |1255 | Admission |HR |HRMS|PROD| BUSINESS|[JSONlink](./jsons/Micro_Service/serviceTopology.json) |SLAJSON|COSTJSON | VIEWJSON | CONFIGJSON |COMPLIANCEJSON|
+
+
+## organization
+This table will hold organization information.
+
+|Column Name | Description | type | Format-Example|
+|:---|:---|:---|:---|
+|id | organization id | int |unique id |
+|name | organization name | string |unique |
+
+
+
+## Snapshot of organization table
+
+|id |name| 
+|:---|:---|
+|1 | Synectiks |
+
+
+
+## department
+This table will hold department information.
+
+|Column Name | Description | type | Format-Example|
+|:---|:---|:---|:---|
+|id | department id | int |unique id |
+|name | department name | string |unique |
+|organization_id | forign key organization table | int | integer id |
+
+## Snapshot of department table
+
+|id |name|organization_id|  
+|:---|:---|:---|
+|1 | Human Resource | 1|
+|2 | IT Networking | 1|
+
+
+
+## cloud_environment
+This table will hold cloud wise account and its cross role information.
+
+|Column Name | Description | type | Format-Example|
+|:---|:---|:---|:---|
+|id | cloud environment id | int |unique id |
+|department_id | forign key organization table | int |integer |
+|description | description | string |  |
+|account_id | cloud(AWS/AZURE/GCP ect.) account id | string |  |
+|display_name | name given to any account | string |  |
+|role_arn | cross account role arn | string |  |
+|external_id | external id of an account | string |  |
+|cloud | cloud name (AWS/AZURE/GCP) | string |  |
+
+## Snapshot of cloud_environment table
+
+|id |department_id|description|account_id|display_name|role_arn|external_id|cloud|  
+|:---|:---|:---|:---|:---|:---|:---|:---|
+|1 | 1 | AWS account for for Human Resource department|7869574624|HRD Account|arn:aws:iam::7869574624:role/CrossAccount|abcdqwe|AWS|
+
+
+## cloud_element_summary
+This table will have summary of an account.
+
+|Column Name | Description | type | Format-Example|
+|:---|:---|:---|:---|
+|id | cloud element id | int |unique id |
+|cloud_environment_id | forign key cloud_environment table | int |integer |
+|summary_json | JSON having compelte summanry of an account | jsonb |  |
+
+## Snapshot of cloud_element_summary table
+
+|id |cloud_environment_id|summary_json|  
+|:---|:---|:---|
+|1 | 1 | [JSONlink](./jsons/Cloud_Element_Summary/summary.json)|
+
+
+## deployment_environment
+This table will have summary of an account.
+
+|Column Name | Description | type | Format-Example|
+|:---|:---|:---|:---|
+|id | environment id | int |unique id |
+|name | environment name | string |unique |
+
+
+## Snapshot of deployment_environment table
+
+|id |name|  
+|:---|:---|
+|1 | DEV |
+|2 | TEST |
+|3 | STAGE |
+|4 | PROD |
+
+
+
+## catalogue
+This table will hold dev/sec/ops dashboards and datasource master datas.
+
+|Column Name | Description | type | Format-Example|
+|:---|:---|:---|:---|
+|id | catalogue id | int |unique id |
+|details | dev/sec/ops datasource and dashboards master data | jsonb | |
+
+
+## Snapshot of catalogue table
+
+|id |details|  
+|:---|:---|
+|1 | [JSONlink](./jsons/Catalogue/catalogue.json) |
+
+
+
+# CMDB API End Points
+## Base API : http://localhost:5057/api
+
+## Organization
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations | | [Response JSONlink](./jsons/Organization/all.json) | Get all the rows|
+|GET | /organizations/{id} | | [Response JSONlink](./jsons/Organization/entity.json) | Get single row of given id |
+|GET | /organizations/search | name=Synectiks | [Response JSONlink](./jsons/Organization/all.json) | Get all the rows on given filter|
+|POST | /organizations | [Request JSONlink](./jsons/Organization/add.json) | [Response JSONlink](./jsons/Organization/entity.json) | Create a record|
+|PATCH | /organizations/{id} | [Request JSONlink](./jsons/Organization/update.json) | [Response JSONlink](./jsons/Organization/entity.json) | Update a record|
+|DELETE | /organizations/{id} | | | Delete a record|
+
+
+## Department
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /departments | | [Response JSONlink](./jsons/Department/all.json) | Get all the rows|
+|GET | /departments/{id} | | [Response JSONlink](./jsons/Department/entity.json) | Get single row of given id |
+|GET | /departments/search | name=IT Networki | [Response JSONlink](./jsons/Department/all.json) | Get all the rows on given filter|
+|POST | /departments | [Request JSONlink](./jsons/Department/add.json) | [Response JSONlink](./jsons/Department/entity.json) | Create a record|
+|PATCH | /departments/{id} | [Request JSONlink](./jsons/Department/update.json) | [Response JSONlink](./jsons/Department/entity.json) | Update a record|
+|DELETE | /departments/{id} | | | Delete a record| 
+
+## Cloud Environment
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /cloud-environments | | [Response JSONlink](./jsons/CoudEnvironment/all.json) | Get all the rows|
+|GET | /cloud-environments/{id} | | [Response JSONlink](./jsons/CoudEnvironment/entity.json) | Get single row of given id |
+|GET | /cloud-environments/search | accountId=657907747 | [Response JSONlink](./jsons/CoudEnvironment/all.json) | Get all the rows on given filter|
+|POST | /cloud-environments | [Request JSONlink](./jsons/CoudEnvironment/add.json) | [Response JSONlink](./jsons/CoudEnvironment/entity.json) | Create a record|
+|PATCH | /cloud-environments/{id} | [Request JSONlink](./jsons/CoudEnvironment/update.json) | [Response JSONlink](./jsons/CoudEnvironment/entity.json) | Update a record|
+|DELETE | /cloud-environments/{id} | | | Delete a record|
+
+
+## Cloud Element Summary
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /cloud-element-summary | | [Response JSONlink](./jsons/Cloud_Element_Summary/all.json) | Get all the rows|
+|GET | /cloud-element-summary/{id} | | [Response JSONlink](./jsons/Cloud_Element_Summary/entity.json) | Get single row of given id |
+|GET | /cloud-element-summary/search | accountId=657907747 | [Response JSONlink](./jsons/Cloud_Element_Summary/all.json) | Get all the rows on given filter|
+|POST | /cloud-element-summary | [Request JSONlink](./jsons/Cloud_Element_Summary/add.json) | [Response JSONlink](./jsons/Cloud_Element_Summary/entity.json) | Create a record|
+|PATCH | /cloud-element-summary/{id} | [Request JSONlink](./jsons/Cloud_Element_Summary/update.json) | [Response JSONlink](./jsons/Cloud_Element_Summary/entity.json) | Update a record|
+|DELETE | /cloud-element-summary/{id} | | | Delete a record| 
+
+
+## Cloud Element 
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /cloud-elements | | [Response JSONlink](./jsons/Cloud_Element/all.json) | Get all the rows|
+|GET | /cloud-elements/{id} | | [Response JSONlink](./jsons/Cloud_Element/entity.json) | Get single row of given id |
+|GET | /cloud-elements/search | elementType=EC2 | [Response JSONlink](./jsons/Cloud_Element/all.json) | Get all the rows on given filter|
+|POST | /cloud-elements | [Request JSONlink](./jsons/Cloud_Element/add.json) | [Response JSONlink](./jsons/Cloud_Element/entity.json) | Create a record|
+|PATCH | /cloud-elements/{id} | [Request JSONlink](./jsons/Cloud_Element/update.json) | [Response JSONlink](./jsons/Cloud_Element/entity.json) | Update a record|
+|DELETE | /cloud-elements/{id} | | | Delete a record| 
+
+## Micro Service 
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /micro-service | | [Response JSONlink](./jsons/Micro_Service/all.json) | Get all the rows|
+|GET | /micro-service/{id} | | [Response JSONlink](./jsons/Micro_Service/entity.json) | Get single row of given id |
+|GET | /micro-service/search | name=Admission&product=HR | [Response JSONlink](./jsons/Micro_Service/all.json) | Get all the rows on given filter|
+|GET | /micro-service/enable-monitoring | name=Admission&product=HR | [Response JSONlink](./jsons/Micro_Service/enableMonitoring.json) | import all the dashboards for the services searched on given filter criteria |
+|POST | /micro-service | [Request JSONlink](./jsons/Micro_Service/add.json) | [Response JSONlink](./jsons/Micro_Service/entity.json) | Create a record|
+|PATCH | /micro-service/{id} | [Request JSONlink](./jsons/Micro_Service/update.json) | [Response JSONlink](./jsons/Micro_Service/entity.json) | Update a record|
+|DELETE | /micro-service/{id} | | | Delete a record|  
+
+
+## Deployment Environment 
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /deployment-environments | | [Response JSONlink](./jsons/DeploymentEnvironment/all.json) | Get all the rows|
+|GET | /deployment-environments/{id} | | [Response JSONlink](./jsons/DeploymentEnvironment/entity.json) | Get single row of given id |
+|GET | /deployment-environments/search | elementType=EC2 | [Response JSONlink](./jsons/DeploymentEnvironment/all.json) | Get all the rows on given filter|
+|POST | /deployment-environments | [Request JSONlink](./jsons/DeploymentEnvironment/add.json) | [Response JSONlink](./jsons/DeploymentEnvironment/entity.json) | Create a record|
+|PATCH | /deployment-environments/{id} | [Request JSONlink](./jsons/DeploymentEnvironment/update.json) | [Response JSONlink](./jsons/DeploymentEnvironment/entity.json) | Update a record|
+|DELETE | /deployment-environments/{id} | | | Delete a record| 
