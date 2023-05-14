@@ -1,0 +1,11 @@
+{
+    "id": 1,
+    "name": "AWS CloudTrail Overview",
+    "description": "Overview of your AWS users, resources, network and security events, top 10 users, failed logins, resource creation and deletion",
+    "jsonLocation": "s3://updated-dashboards-bucket/NewDashboards/CloudTrail/AWS CloudTrail - Overview.txt",
+    "associatedCloud": "AWS",
+    "associatedSLAType": "PERFORMANCE",
+    "associatedDataType": "LOG",
+    "associatedDataSourceType": "AWS-PullLogs-Api",
+    "associatedCloudElementType": "CLOUDTRAIL"
+}

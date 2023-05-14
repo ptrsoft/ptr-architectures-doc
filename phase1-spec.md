@@ -598,4 +598,21 @@ This table will hold dev/sec/ops dashboards and datasource master datas.
 |GET | /deployment-environments/search | elementType=EC2 | [Response JSONlink](./jsons/DeploymentEnvironment/all.json) | Get all the rows on given filter|
 |POST | /deployment-environments | [Request JSONlink](./jsons/DeploymentEnvironment/add.json) | [Response JSONlink](./jsons/DeploymentEnvironment/entity.json) | Create a record|
 |PATCH | /deployment-environments/{id} | [Request JSONlink](./jsons/DeploymentEnvironment/update.json) | [Response JSONlink](./jsons/DeploymentEnvironment/entity.json) | Update a record|
-|DELETE | /deployment-environments/{id} | | | Delete a record| 
+|DELETE | /deployment-environments/{id} | | | Delete a record|
+
+## Catalogue 
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /catalogue | | [Response JSONlink](./jsons/Catalogue/catalogue.json) | Get all the rows|
+|GET | /catalogue/{id} | | [Response JSONlink](./jsons/Catalogue/catalogue.json) | Get single row of given id |
+|POST | /catalogue | [Request JSONlink](./jsons/Catalogue/catalogue.json) | [Response JSONlink](./jsons/Catalogue/catalogue.json) | Create a record|
+|PATCH | /catalogue/{id} | [Request JSONlink](./jsons/Catalogue/catalogue.json) | [Response JSONlink](./jsons/Catalogue/catalogue.json) | Update a record|
+|DELETE | /catalogue/{id} | | | Delete a record|
+|GET | /catalogue/datasource/{id} | | [Response JSONlink](./jsons/Catalogue/datasource/entity.json) | Get a datasource|
+|GET | /catalogue/datasource/search | name=AWS-PullMetric-Api | [Response JSONlink](./jsons/Catalogue/datasource/all.json) | Get list of datasources on given filter|
+|POST | /catalogue/datasource | [Request JSONlink](./jsons/Catalogue/datasource/add.json) | [Response JSONlink](./jsons/Catalogue/datasource/entity.json) | create a datasource|
+|PATCH | /catalogue/datasource/{id} | [Request JSONlink](./jsons/Catalogue/datasource/update.json) | [Response JSONlink](./jsons/Catalogue/datasource/entity.json) | Update a datasource|
+|GET | /catalogue/dasbhoard/{id} | | [Response JSONlink](./jsons/Catalogue/dashboard/entity.json) | Get a dashboard|
+|GET | /catalogue/dasbhoard/search | associatedSLAType=PERFORMANCE | [Response JSONlink](./jsons/Catalogue/dashboard/all.json) | Get list of dashboards on given filter|
+|POST | /catalogue/dashboard | [Request JSONlink](./jsons/Catalogue/dashboard/add.json) | [Response JSONlink](./jsons/Catalogue/dashboard/entity.json) | create a dashboard|
+|PATCH | /catalogue/dashboard/{id} | [Request JSONlink](./jsons/Catalogue/dashboard/update.json) | [Response JSONlink](./jsons/Catalogue/dashboard/entity.json) | Update a dashboard| 
