@@ -617,7 +617,7 @@ This table will hold dev/sec/ops dashboards and datasource master datas.
 |POST | /catalogue/dashboard | [Request JSONlink](./jsons/Catalogue/dashboard/add.json) | [Response JSONlink](./jsons/Catalogue/dashboard/entity.json) | create a dashboard|
 |PATCH | /catalogue/dashboard/{id} | [Request JSONlink](./jsons/Catalogue/dashboard/update.json) | [Response JSONlink](./jsons/Catalogue/dashboard/entity.json) | Update a dashboard| 
 
-Please verify checklist -
+### **Please verify entity checklist -**
 
 - Organization
 - Department 
@@ -634,6 +634,30 @@ Please verify checklist -
 - ToolChains
 - Service Cost & Quaity Trend 
 - Process Cost & Quality Trend
+
+## **Please verify the metadata checklists :**
+
+App_Services_Type -- 
+Like NodesJs / Golang / Java / Python Api Server / Lambda / StepFunction / Batch
+
+Data_Services_Type
+SQLDB (Mysql/Mssql/Postgresql) , CacheDB(Redis/Memcache) , SearchDB(Opensearch/ ElasticSearch) , NOSQL DB (Mongo/ Dynamo ), GRAPH DB , METRIC DB , LOG DB , Object Store(S3) , Github 
+
+Data stored as follows:
+
+Mysql    	SQLDB
+Mssql    	SQLDB
+Postgresql 	SQLDB
+Redis		CacheDB
+MemCache 	CacheDB
+HazzleCast      CacheDB
+ElasticSearch   SearchDB
+OpenSearch      SearchDB
+Dynamo		NOSQL DB
+Mongo		NOSQL DB
+
+
+Master ENVTYPE -- DEV/TEST/STAGE/PROD
 
 Please give endpoints for the following Queries --
 
