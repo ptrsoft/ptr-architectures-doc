@@ -636,40 +636,54 @@ Please verify checklist -
 - Process Cost & Quality Trend
 
 Please give endpoints for the following Queries --
+
+
 For every Organization --
-    Its department , products , products environment , associated landing Zones and Product Enclaves
-    Department wise product and services Cost & SLA's
-    Landing Zone Wise Costs
+
+    - Its department , products , products environment , associated landing Zones and Product Enclaves 
+    - Department wise product and services Cost & SLA's 
+    - Landing Zone Wise Costs 
+
 For every landing Zones --
-    How Many AWS services Elements it has - Product Enclaves/ Global / Gateway Services / Clusters / Serverles / Nodes / Databases / Datalake services
-    How many products / envs it hosts?
-    How many Micro-Services its hosts , which product / env they belong
+
+    - How Many AWS services Elements it has - Product Enclaves/ Global / Gateway Services / Clusters / Serverles / Nodes / Databases / Datalake services
+    - How many products / envs it hosts?
+    - How many Micro-Services its hosts , which product / env they belong
+
 For every Product Enclaves --
-    How many clusters ? 
-    Each cluster hosted App & Data Layer , which microservices they belong?
+
+    - How many clusters ? 
+    - Each cluster hosted App & Data Layer , which microservices they belong?
+
 For every Product --
-    How many environment it has ?
-    List the MicroServices for that Env
-    List the Api Gateway / LB for that Env
+
+    - How many environment it has ?
+    - List the MicroServices for that Env
+    - List the Api Gateway / LB for that Env
+
 For every Microservices --
-    What are their Gateway / Lb / App / Data Layer
-    Find the Cost & SLA's of the Microservice
-    Find the Cost & SLA's of their Gateway / Lb / App / Data Layer
-    Find the Cost & SLA's  trending of the Microservice
-    Find the Cost & SLA's trending of their Gateway / Lb / App / Data Layer
-    Find the compliance of its Gateway / Lb / App / Data Layer
+
+    - What are their Gateway / Lb / App / Data Layer
+    - Find the Cost & SLA's of the Microservice
+    - Find the Cost & SLA's of their Gateway / Lb / App / Data Layer
+    - Find the Cost & SLA's  trending of the Microservice
+    - Find the Cost & SLA's trending of their Gateway / Lb / App / Data Layer
+    - Find the compliance of its Gateway / Lb / App / Data Layer
+
 Find the Cost(daily/weekly/monthly) of the entire organization
-    Department Wise Cost
-    Product Wise Cost 
-    Environment Wise Cost
-    Department/ Product  wise Costs
-    Department/ Product / Environemnt wise Costs
-    Department/ Product / Environemnt / Microservice Wise Costs
+
+    - Department Wise Cost
+    - Product Wise Cost 
+    - Environment Wise Cost
+    - Department/ Product  wise Costs
+    - Department/ Product / Environemnt wise Costs
+    - Department/ Product / Environemnt / Microservice Wise Costs
 
 Find the SLA's (daily/weekly/monthly) of the entire organization
-    Department/ Product / Environemnt wise CostsSLA's
-    Department/ Product / Environemnt / Microservice Wise SlA's
-    Department/ Product / Environemnt / Microservice/ (Gw/LB/App/Data layer) Wise SlA's
+
+    - Department/ Product / Environemnt wise CostsSLA's
+    - Department/ Product / Environemnt / Microservice Wise SlA's
+    - Department/ Product / Environemnt / Microservice/ (Gw/LB/App/Data layer) Wise SlA's
 
 
 
