@@ -673,6 +673,7 @@ For every landing Zones --
     - How Many AWS services Elements it has - Product Enclaves/ Global / Gateway Services / Clusters / Serverles / Nodes / Databases / Datalake services
     - How many products / envs it hosts?
     - How many Micro-Services its hosts , which product / env they belong
+    - Its available ApiGateways/LB's/ Product Enclaves / Clusters/ Service Mesh / Cloud Managed Services (With filters of Data(Cache / SQL / NOSQL ..) & DataLake  Services) 
 
 For every Product Enclaves --
 
