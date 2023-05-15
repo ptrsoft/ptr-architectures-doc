@@ -717,6 +717,8 @@ For every cloudelement
 
     - Set the log / Trace Location
     - Set the cost & SLA 
+    - enable the monitoring
+    - enable the alerts
 
 For every Microservices 
 
