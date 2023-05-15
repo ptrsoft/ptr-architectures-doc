@@ -616,3 +616,61 @@ This table will hold dev/sec/ops dashboards and datasource master datas.
 |GET | /catalogue/dasbhoard/search | associatedSLAType=PERFORMANCE | [Response JSONlink](./jsons/Catalogue/dashboard/all.json) | Get list of dashboards on given filter|
 |POST | /catalogue/dashboard | [Request JSONlink](./jsons/Catalogue/dashboard/add.json) | [Response JSONlink](./jsons/Catalogue/dashboard/entity.json) | create a dashboard|
 |PATCH | /catalogue/dashboard/{id} | [Request JSONlink](./jsons/Catalogue/dashboard/update.json) | [Response JSONlink](./jsons/Catalogue/dashboard/entity.json) | Update a dashboard| 
+
+Please verify checklist -
+
+- Organization
+- Department 
+- Product
+- Environment
+- MicroServices (GW/LB/App/Data Layers)
+- Cloud Element (cluster/ cloud-managed elements / global elements / gateway elements)
+- Landing Zones
+- Product Enclaves
+- Artifact Catalogue
+- Artifacts
+- Library
+- Automation-Jobs
+- ToolChains
+- Service Cost & Quaity Trend 
+- Process Cost & Quality Trend
+
+Please give endpoints for the following Queries --
+For every Organization --
+    Its department , products , products environment , associated landing Zones and Product Enclaves
+    Department wise product and services Cost & SLA's
+    Landing Zone Wise Costs
+For every landing Zones --
+    How Many AWS services Elements it has - Product Enclaves/ Global / Gateway Services / Clusters / Serverles / Nodes / Databases / Datalake services
+    How many products / envs it hosts?
+    How many Micro-Services its hosts , which product / env they belong
+For every Product Enclaves --
+    How many clusters ? 
+    Each cluster hosted App & Data Layer , which microservices they belong?
+For every Product --
+    How many environment it has ?
+    List the MicroServices for that Env
+    List the Api Gateway / LB for that Env
+For every Microservices --
+    What are their Gateway / Lb / App / Data Layer
+    Find the Cost & SLA's of the Microservice
+    Find the Cost & SLA's of their Gateway / Lb / App / Data Layer
+    Find the Cost & SLA's  trending of the Microservice
+    Find the Cost & SLA's trending of their Gateway / Lb / App / Data Layer
+    Find the compliance of its Gateway / Lb / App / Data Layer
+Find the Cost(daily/weekly/monthly) of the entire organization
+    Department Wise Cost
+    Product Wise Cost 
+    Environment Wise Cost
+    Department/ Product  wise Costs
+    Department/ Product / Environemnt wise Costs
+    Department/ Product / Environemnt / Microservice Wise Costs
+
+Find the SLA's (daily/weekly/monthly) of the entire organization
+    Department/ Product / Environemnt wise CostsSLA's
+    Department/ Product / Environemnt / Microservice Wise SlA's
+    Department/ Product / Environemnt / Microservice/ (Gw/LB/App/Data layer) Wise SlA's
+
+
+
+
