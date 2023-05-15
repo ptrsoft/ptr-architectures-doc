@@ -659,7 +659,7 @@ Mongo		NOSQL DB
 
 Master ENVTYPE -- DEV/TEST/STAGE/PROD
 
-Please give endpoints for the following Queries --
+## **Please give endpoints for the following Queries --**
 
 
 For every Organization --
@@ -711,5 +711,33 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
     - Department/ Product / Environemnt / Microservice/ (Gw/LB/App/Data layer) Wise SlA's
 
 
+## **Please give endpoints for the following Provisioning --**
 
+For every cloudelement
+
+    - Set the log / Trace Location
+    - Set the cost & SLA 
+
+For every Microservices 
+
+    - Set/update the topology (GW/LB/APP/DATA)
+    - Set the cost & SLA 
+    - Set the dependent Microservices
+
+For every organization / department 
+
+    - Add landing Zone
+
+For every Landing Zone ---
+
+    - Add product enclave (WAF / Gateway / LB / VPC/ Few Clusters )
+    - Add cluster in product enclave
+    - Add WAF/Gateway/LB/product enclave / Cluster for a particular product env
+    - Add product(specifying its env) in product enclave
+    - Add Business Service in a product
+    - Add Common Service in a product
+    - Run Audits on Product
+    - Run Audits on Landing Zone
+    - Run Audits on Product Enclave
+    - Run Audits on Cluster
 
