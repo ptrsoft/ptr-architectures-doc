@@ -669,7 +669,7 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
     - Department/ Product / Environemnt / Microservice Wise SlA's
     - Department/ Product / Environemnt / Microservice/ (Gw/LB/App/Data layer) Wise SlA's
   
-  
+
 ## Queries End Points
 
 ### **For every Organization**
@@ -1004,3 +1004,108 @@ For every Landing Zone ---
     - Run Audits on Product Enclave
     - Run Audits on Cluster
 
+
+## Provisioned End Points
+
+### **For every cloudelement**
+#### **Set the log / Trace Location**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements/{cloudElementId}/log-location | | | create log location of a given cloud element|
+|PATCH | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements/{cloudElementId}/log-location | | | update log location of a given cloud element|
+
+#### **Set the cost & SLA**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements/{cloudElementId}/cost/{frequency} | | | create cost of a given cloud element|
+|PATCH | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements/{cloudElementId}/cost/{frequency} | | | update cost of a given cloud element|
+|POST | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements/{cloudElementId}/sla/{frequency} | | | create SLA of a given cloud element|
+|PATCH | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements/{cloudElementId}/sla/{frequency} | | | update SLA of a given cloud element|
+
+#### **enable the monitoring**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements/{cloudElementId}/enable-monitoring | | | enable monitoring of a given cloud element|
+
+#### **enable the alerts**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements/{cloudElementId}/enable-alert | | | enable alerts of a given cloud element|
+
+
+### **For every Microservices**
+#### **Set/update the topology (GW/LB/APP/DATA)**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|PATCH | /services/{id}/topoloy | | | update topology of a given service id|
+
+#### **Set the cost & SLA**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /services/{id}/cost | | | create cost of a given service id|
+|PATCH | /services/{id}/cost | | | update cost of a given service id|
+|POST | /services/{id}/sla | | | create SLA of a given service id|
+|PATCH | /services/{id}/sla | | | update SLA of a given service id|
+|POST | /services/{id}/cost-sla | | | create cost and SLA of a given service id|
+|PATCH | /services/{id}/cost-sla | | | update cost and SLA of a given service id|
+
+
+#### **Set the dependent Microservices**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /services/{id}/dependent-service | | | create dependent microservice of a given service id|
+|PATCH | /services/{id}/dependent-service | | | update dependent microservice of a given service id|
+		
+### **For every Landing Zone**
+#### **Add product enclave (WAF / Gateway / LB / VPC/ Few Clusters )**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /landing-zone/{landingZone}/product-enclave | | | create product enclave under a landing zone|
+
+#### **Add cluster in product enclave**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /landing-zone/{landingZone}/product-enclave/{productEnclave}/cluster | | | create a cluster under a product enclave|
+
+#### **Add WAF/Gateway/LB/product enclave / Cluster for a particular product env**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /landing-zone/{landingZone}/products/{product}/environments/{env}/cloud-element/{cloudElementId} | | | create a hardware location and hosted services of a cloud-element |
+|PATCH | /landing-zone/{landingZone}/products/{product}/environments/{env}/cloud-element/{cloudElementId} | | | update a hardware location and hosted services of a cloud-element |	
+|POST | /landing-zone/{landingZone}/products/{product}/environments/{env}/services/{id} | | | create a topology of a service |
+|PATCH | /landing-zone/{landingZone}/products/{product}/environments/{env}/services/{id} | | | update a topology of a service |
+
+#### **Add product(specifying its env) in product enclave**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /landing-zone/{landingZone}/environments/{env}/product-enclave/{productEnclave}/products/{product} | | | create a product in a given landing zone and product-enclave |
+		
+#### **Add Business Service in a product**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /landing-zone/{landingZone}/products/{product}/services/{serviceNature} | | | create a business service in a given landing zone and product |
+
+#### **Add Common Service in a product**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|POST | /landing-zone/{landingZone}/products/{product}/services/{serviceNature} | | | create a common service in a given landing zone and product |
+
+#### **Run Audits on Product**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /landing-zone/{landingZone}/products/{product}/audit | | | run audit on a given landing zone and product |
+
+#### **Run Audits on Landing Zone**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /landing-zone/{landingZone}/audit | | | run audit on a given landing zone |
+
+#### **Run Audits on Product Enclave**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /landing-zone/{landingZone}/product-enclave/{productEnclave}/audit | | | run audit on a given landing zone and product enclave |
+
+#### **Run Audits on Cluster**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /landing-zone/{landingZone}/cluster/{clusterId}/audit | | | run audit on a given landing zone and cluster |
