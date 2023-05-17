@@ -779,7 +779,7 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 |GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/associated-product/associated-environment | | | Get list associated environment of every associated product of given service, organization id, department id and landing-zone |
 
 
-#### **Its available ApiGateways/LB's/ Product Enclaves / Clusters/ Service Mesh / Cloud Managed Services (With filters of Data(Cache / SQL / NOSQL ..) & DataLake  Services) **
+#### **Its available ApiGateways/LB's/ Product Enclaves / Clusters/ Service Mesh / Cloud Managed Services (With filters of Data(Cache / SQL / NOSQL ..) & DataLake  Services)**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud-element-type/{cloud-element-type}/services | | | Get list of services of given organization id, landing zone and cloud element type|
@@ -788,7 +788,7 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 
 
 ### **For every Product Enclaves**
-#### **How many clusters ? **
+#### **How many clusters ?**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/product-enclave/associated-clusters | | | Get list of associated clusters for each product-enclaves of given organization id |
@@ -881,7 +881,7 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/departments/{depId}/cost/{frequency} | | | Get cost for given organization id, department id and frequency|
 
-#### **Product Wise Cost **
+#### **Product Wise Cost**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/products/{product}/cost/{frequency} | | | Get cost for given organization id, product and frequency|
