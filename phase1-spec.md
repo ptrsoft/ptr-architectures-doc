@@ -618,109 +618,6 @@ This table will hold dev/sec/ops dashboards and datasource master datas.
 |PATCH | /catalogue/dashboard/{id} | [Request JSONlink](./jsons/Catalogue/dashboard/update.json) | [Response JSONlink](./jsons/Catalogue/dashboard/entity.json) | Update a dashboard| 
 
 
-## Queries End Points
-
-### **For every Organization**
-#### **department**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/departments | | [Response JSONlink](./jsons/Department/all.json) | Get list of department of a given organization id |
-
-#### **products**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/environments/{env}/products | | | Get list of products of given organization id and deployment environment name |
-|GET | /organizations/{orgId}/departments/{depId}/environments/{env}/products | | | Get list of products of given organization id, department id and deployment environment name |
-
-#### **products environment**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/environments/{env}/products | | | Get list of products of given organization id and deployment environment name |
-|GET | /organizations/{orgId}/departments/{depId}/environments/{env}/products | | | Get list of products of given organization id, department id and deployment environment name |
-		
-#### **associated landing Zones**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/landing-zone | | | Get list of landing-zones of given organization id |
-|GET | /organizations/{orgId}/departments/{depId}/landing-zone | | | Get list of landing-zones of given organization id and department id |
-|GET | /organizations/{orgId}/cloud/{cloudName}/landing-zone | | | Get list of landing-zones of given organization id and cloud name |
-|GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/landing-zone | | | Get list of landing-zones of given organization id, department id and cloud name|
-
-#### **product enclaves**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/product-enclave | | | Get list of product-enclaves of given organization id |
-|GET | /organizations/{orgId}/departments/{depId}/product-enclave | | | Get list of product-enclaves of given organization id and department id |
-|GET | /organizations/{orgId}/landing-zone/{landingZone}/product-enclave | | | Get list of product-enclaves of given organization id and landing-zone |
-|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/product-enclave | | | Get list of product-enclaves of given organization id, department id and landing-zone |
-		
-#### **department wise product and services cost & SLA's**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/services | | | Get list of services of given organization id |
-|GET | /organizations/{orgId}/departments/{depId}/services | | | Get list of services of given organization id and department id |
-|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services | | | Get list of services of given organization id, department id and landing-zone |
-|GET | /organizations/{orgId}/cloud/{cloudName}/services | | | Get list of services of given organization id and cloud name|
-|GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/services | | | Get list of services of given organization id, department id and cloud name |
-|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud/{cloudName}/services | | | Get list of services of given organization id, department id, landing-zone and cloud name|
-|GET | /organizations/{orgId}/products/{product}/services | | | Get list of services of given organization id and product |
-|GET | /organizations/{orgId}/departments/{depId}/products/{product}/services | | | Get list of services of given organization id, department id and product|
-|GET | /organizations/{orgId}/cloud/{cloudName}/products/{product}/services | | | Get list of services of given organization id, cloud name and product|
-|GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/products/{product}/services | | | Get list of services of given organization id, department id, cloud name and product|
-		
-#### **landing zone wise costs**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/landing-zone/{landingZone}/costs | | | Get list of costs of given organization id and landing-zone |
-|GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud/{cloudName}/costs | | | Get list of costs of given organization id, landing-zone and cloud name|
-|GET | /organizations/{orgId}/landing-zone/{landingZone}/products/{product}/costs | | | Get list of costs of given organization id, landing-zone and product|
-|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/products/{product}/costs | | | Get list of costs of given organization id, department id, landing-zone and product|
-|GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud/{cloudName}/products/{product}/costs | | | Get list of costs of given organization id, landing-zone, cloud name and product|
-|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud/{cloudName}/products/{product}/costs | | | Get list of costs of given organization id, department id, landing-zone, cloud name and product|
-
-
-### **Please verify entity checklist -**
-
-- Organization
-- Department 
-- Product
-- Environment
-- MicroServices (GW/LB/App/Data Layers)
-- Cloud Element (cluster/ cloud-managed elements / global elements / gateway elements)
-- Landing Zones
-- Product Enclaves
-- Artifact Catalogue
-- Artifacts
-- Library
-- Automation-Jobs
-- ToolChains
-- Service Cost & Quaity Trend 
-- Process Cost & Quality Trend
-
-## **Please verify the metadata checklists :**
-
-App_Services_Type -- 
-Like NodesJs / Golang / Java / Python Api Server / Lambda / StepFunction / Batch
-
-Data_Services_Type
-SQLDB (Mysql/Mssql/Postgresql) , CacheDB(Redis/Memcache) , SearchDB(Opensearch/ ElasticSearch) , NOSQL DB (Mongo/ Dynamo ), GRAPH DB , METRIC DB , LOG DB , Object Store(S3) , Github 
-
-Data stored as follows:
-
-Mysql    	SQLDB
-Mssql    	SQLDB
-Postgresql 	SQLDB
-Redis		CacheDB
-MemCache 	CacheDB
-HazzleCast      CacheDB
-ElasticSearch   SearchDB
-OpenSearch      SearchDB
-Dynamo		NOSQL DB
-Mongo		NOSQL DB
-
-
-Master ENVTYPE -- DEV/TEST/STAGE/PROD
-
 ## **Please give endpoints for the following Queries --**
 
 
@@ -771,6 +668,308 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
     - Department/ Product / Environemnt wise CostsSLA's
     - Department/ Product / Environemnt / Microservice Wise SlA's
     - Department/ Product / Environemnt / Microservice/ (Gw/LB/App/Data layer) Wise SlA's
+  
+  
+## Queries End Points
+
+### **For every Organization**
+#### **department**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments | | [Response JSONlink](./jsons/Department/all.json) | Get list of department of a given organization id |
+
+#### **products**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/products | | | Get list of products of given organization id |
+|GET | /organizations/{orgId}/departments/{depId}/products | | | Get list of products of given organization id and department id |
+
+
+#### **products environment**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/environments/{env}/products | | | Get list of products of given organization id and deployment environment name |
+|GET | /organizations/{orgId}/departments/{depId}/environments/{env}/products | | | Get list of products of given organization id, department id and deployment environment name |
+		
+		
+#### **associated landing Zones**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/landing-zone | | | Get list of landing-zones of given organization id |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone | | | Get list of landing-zones of given organization id and department id |
+|GET | /organizations/{orgId}/cloud/{cloudName}/landing-zone | | | Get list of landing-zones of given organization id and cloud name |
+|GET | /organizations/{orgId}/cloud/associated-landing-zone | | | Get list of associated landing-zones of every cloud of given organization id |
+|GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/landing-zone | | | Get list of landing-zones of given organization id, department id and cloud name|
+
+
+#### **product enclaves**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/product-enclave | | | Get list of product-enclaves of given organization id |
+|GET | /organizations/{orgId}/departments/{depId}/product-enclave | | | Get list of product-enclaves of given organization id and department id |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/product-enclave | | | Get list of product-enclaves of given organization id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/product-enclave | | | Get list of product-enclaves of given organization id, department id and landing-zone |
+		
+		
+#### **department wise product and services cost & SLA's**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/services | | | Get list of services of given organization id |
+|GET | /organizations/{orgId}/departments/{depId}/services | | | Get list of services of given organization id and department id |
+|GET | /organizations/{orgId}/cloud/{cloudName}/services | | | Get list of services of given organization id and cloud name|
+|GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/services | | | Get list of services of given organization id, department id and cloud name |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud/{cloudName}/services | | | Get list of services of given organization id, department id, landing-zone and cloud name|
+|GET | /organizations/{orgId}/products/associated-services | | | Get list of services of every product of given organization |
+|GET | /organizations/{orgId}/products/{product}/services | | | Get list of services of given organization id and product |
+|GET | /organizations/{orgId}/departments/{depId}/products/{product}/services | | | Get list of services of given organization id, department id and product|
+|GET | /organizations/{orgId}/departments/{depId}/products/associated-services | | | Get list of services of every product of given organization id and department id|
+|GET | /organizations/{orgId}/cloud/{cloudName}/products/{product}/services | | | Get list of services of given organization id, cloud name and product|
+|GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/products/{product}/services | | | Get list of services of given organization id, department id, cloud name and product|
+		
+		
+#### **landing zone wise costs**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/costs | | | Get list of costs of given organization id and landing-zone |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud/{cloudName}/costs | | | Get list of costs of given organization id, landing-zone and cloud name|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/products/{product}/costs | | | Get list of costs of given organization id, landing-zone and product|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/products/{product}/costs | | | Get list of costs of given organization id, department id, landing-zone and product|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud/{cloudName}/products/{product}/costs | | | Get list of costs of given organization id, landing-zone, cloud name and product|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud/{cloudName}/products/{product}/costs | | | Get list of costs of given organization id, department id, landing-zone, cloud name and product|
+
+
+### **For every landing Zone**
+#### **How Many AWS services Elements it has - Product Enclaves/ Global / Gateway Services / Clusters / Serverles / Nodes / Databases / Datalake services**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/landing-zone/cloud-elements | | | Get list of cloud elements for each landing zone of given organization id |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud-elements | | | Get list of cloud elements of given organization id and landing zone|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud-elements/{cloud-element-type} | | | Get list of cloud elements of given organization id, landing zone and cloud element type|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements | | | Get list of cloud elements of given organization id, department id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-elements/{cloud-element-type} | | | Get list of cloud elements of given organization id, department id, landing-zone and cloud element type |
+
+#### **How many products**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/products | | | Get list of products of given organization id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/products | | | Get list of products of given organization id, department id and landing-zone |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/environment/{envId}/products | | | Get list of products of given organization id, landing-zone and deployment environment |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/environment/{envId}/products | | | Get list of products of given organization id, department id, landing-zone and deployment environment |
+
+#### **product belongs to how many envs?**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/products/associated-environments | | | Get list of associated environment, every product belongs to of given organization id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/products/associated-environments | | | Get list of associated environment, every product belongs to of given organization id, department id and landing-zone |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/products{productName}/associated-environments | | | Get list of associated environment, a product belongs to of given organization id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/products{productName}/associated-environments | | | Get list of associated environment, a product belongs to of given organization id, department id and landing-zone |	
+	
+#### **How many Micro-Services its hosts -, which product / env they belong**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/services | | | Get list of services of given organization id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services | | | Get list of services of given organization id, department id and landing-zone |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/services/associated-product | | | Get list of associated products of every service of given organization id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/associated-product | | | Get list of associated product of every service of given organization id, department id and landing-zone |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/services/{serviceName}/associated-product | | | Get list of associated products of given service, organization id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/associated-product | | | Get list of associated products of given service, organization id, department id and landing-zone |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/services/associated-product/associated-environment | | | Get list of associated environment of every associated products of every service of given organization id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/associated-product/associated-environment | | | Get list of associated environment of every associated product of every service of given organization id, department id and landing-zone |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/services/{serviceName}/associated-product/associated-environment | | | Get list associated environment of every associated product of given service, organization id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/associated-product/associated-environment | | | Get list associated environment of every associated product of given service, organization id, department id and landing-zone |
+
+
+#### **Its available ApiGateways/LB's/ Product Enclaves / Clusters/ Service Mesh / Cloud Managed Services (With filters of Data(Cache / SQL / NOSQL ..) & DataLake  Services) **
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud-element-type/{cloud-element-type}/services | | | Get list of services of given organization id, landing zone and cloud element type|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud-element-type/{cloud-element-type}/{cloudElementId}/services | | | Get list of services of given organization id, landing zone, cloud element type and cloud element id|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud-element-type/{cloud-element-type}/{cloudElementId}/services | | | Get list of services of given organization id, department id, landing zone, cloud element type and cloud element id|
+
+
+### **For every Product Enclaves**
+#### **How many clusters ? **
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/product-enclave/associated-clusters | | | Get list of associated clusters for each product-enclaves of given organization id |
+|GET | /organizations/{orgId}/product-enclave/{productEnclave}/clusters | | | Get list of clusters for given organization id and product-enclave |
+|GET | /organizations/{orgId}/departments/{depId}/product-enclave/associated-clusters | | | Get list of associated clusters for each product-enclave of given organization id and department id |
+|GET | /organizations/{orgId}/departments/{depId}/product-enclave/{productEnclave}/clusters | | | Get list of clusters for given organization id, department id and product-enclave|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/product-enclave/associated-clusters | | | Get list of associated clusters for each product-enclave of given organization id and landing-zone |
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/product-enclave/{productEnclave}/clusters | | | Get list of clusters of given organization id, landing-zone and product enclave|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/product-enclave/associated-clusters | | | Get list of associated cluster for each product-enclaves of given organization id, department id and landing-zone |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/product-enclave/{productEnclave}/associated-clusters | | | Get list of cluster of given organization id, department id, landing-zone and product enclave|
+
+#### **Each cluster hosted App & Data Layer , which microservices they belong?**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/product-enclave/{productEnclave}/clusters/{clusterId}/services | | | Get list of services for given organization id, product-enclave and cluster id |
+|GET | /organizations/{orgId}/departments/{depId}/product-enclave/{productEnclave}/clusters/{clusterId}/services | | | Get list of services for given organization id, department id, product-enclave and cluster id |
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/product-enclave/{productEnclave}/clusters/{clusterId}/services | | | Get list of services for given organization id, department id, landing zone, product-enclave and cluster id |
+|GET | /organizations/{orgId}/product-enclave/{productEnclave}/clusters/{clusterId}/{serviceType}/services | | | Get list of services for given organization id, product-enclave, cluster id and service type|
+|GET | /organizations/{orgId}/departments/{depId}/product-enclave/{productEnclave}/clusters/{clusterId}/{serviceType}/services | | | Get list of services for given organization id, department id, product-enclave, cluster id and service type|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/product-enclave/{productEnclave}/clusters/{clusterId}/{serviceType}/services | | | Get list of services for given organization id, department id, landing zone, product-enclave, cluster id and service type |
+
+
+### **For every Product**
+#### **List the MicroServices for that Env**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/products/{product}/environments/{env}/services | | | Get list of services of given organization id, product and deployment environment|
+|GET | /organizations/{orgId}/departments/{depId}/products/{product}/environments/{env}/services | | | Get list of services of given organization id, department id, product and deployment environment|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/products/{product}/environments/{env}/services | | | Get list of services of given organization id, landing-zone, product and deployment environment|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/products/{product}/environments/{env}/services | | | Get list of services of given organization id, department id, landing-zone, product and deployment environment|
+|GET | /organizations/{orgId}/cloud/{cloudName}/products/{product}/environments/{env}/services | | | Get list of services of given organization id, cloud name, product and deployment environment|
+|GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/products/{product}/environments/{env}/services | | | Get list of services of given organization id, department id, cloud name, product and deployment environment|
+|GET | /organizations/{orgId}/landing-zone/{landingZone}/cloud/{cloudName}/products/{product}/environments/{env}/services | | | Get list of services of given organization id, landing-zone, cloud name, product and deployment environment|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud/{cloudName}/products/{product}/environments/{env}/services | | | Get list of services of given organization id, department id, landing-zone, cloud name, product and deployment environment|
+
+#### **List the Api Gateway / LB for that Env**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/products/{product}/environments/{env}/cloud-elements | | | Get list of cloud elements of given organization id, product and deployment environment|
+|GET | /organizations/{orgId}/products/{product}/environments/{env}/{cloudElementType}/cloud-elements | | | Get list of cloud elements of given organization id, product, deployment environment and cloud element type|
+
+### **For every Microservice**
+#### **What are their Gateway / Lb / App / Data Layer**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/associated-cloud-elements | | | Get list of associated cloud elements given organization id, department id, landing zone and service name|
+
+#### **Find the Cost & SLA's of the Microservice**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/cost-and-sla | | | Get COST and SLA of given organization id, department id, landing zone and service name|
+
+#### **Find the Cost & SLA's of their Gateway / Lb / App / Data Layer**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/{cloudElementType}/cost-and-sla | | | Get COST and SLA of given organization id, department id, landing zone, service name and cloud element type|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/{serviceType}/cost-and-sla | | | Get COST and SLA of given organization id, department id, landing zone, service name and service type|
+
+
+#### **What are their Gateway / Lb / App / Data Layer**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/cloud-element-type | | | Get list of cloud elements (API Gateway/LB etc.) of given organization id, department id, landing zone, service name|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/{serviceType} | | | Get list of service types (App layer/Data layer) of given organization id, department id, landing zone, service name and service type|
+
+
+#### **Find the Cost & SLA's  trending of the Microservice**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/trend/{frequency} | | | Get cost trend of a microservice of given organization id, department id, landing zone, service name|
+
+#### **Find the Cost & SLA's trending of their Gateway / Lb / App / Data Layer**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/{cloudElementType}/trend/{frequency} | | | Get cost trend of cloud element type (ApiGateways/LB) of a microservice of given organization id, department id, landing zone, service name|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/{serviceType}/trend/{frequency} | | | Get cost trend of service type (App/Data layer) of a microservice of given organization id, department id, landing zone, service name|
+
+
+#### **Find the compliance of its Gateway / Lb / App / Data Layer**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/{cloudElementType}/compliance/{rules} | | | Get compliance of cloud element type (ApiGateways/LB) of a microservice of given organization id, department id, landing zone, service name and rules|
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services/{serviceName}/{serviceType}/compliance/{rules} | | | Get compliance of service type (App/Data layer) of a microservice of given organization id, department id, landing zone, service name and rules|
+
+
+
+### **Find the Cost(daily/weekly/monthly) of the entire organization**
+#### **Department Wise Cost**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/cost/{frequency} | | | Get cost for given organization id, department id and frequency|
+
+#### **Product Wise Cost **
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/products/{product}/cost/{frequency} | | | Get cost for given organization id, product and frequency|
+		
+#### **Environment Wise Cost**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/environments/{env}/cost/{frequency} | | | Get cost for given organization id, environment and frequency|
+		
+#### **Department/ Product  wise Costs**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/products/{product}/cost/{frequency} | | | Get cost for given organization id, department id, product and frequency|
+
+#### **Department/ Product / Environemnt wise Costs**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/products/{product}/environments/{env}/cost/{frequency} | | | Get cost for given organization id, department id, product, environment and frequency|
+
+#### **Department/ Product / Environemnt / Microservice Wise Costs**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/products/{product}/environments/{env}/services/{serviceName}/cost/{frequency} | | | Get cost for given organization id, department id, product, environment, service name and frequency|
+		
+
+### **Find the SLA's (daily/weekly/monthly) of the entire organization**
+#### **Department/ Product / Environemnt wise CostsSLA's**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/products/{product}/environments/{env}/sla/{frequency} | | | Get SLA for given organization id, department id, product, environment and frequency|
+		
+#### **Department/ Product / Environemnt / Microservice Wise SlA's**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/products/{product}/environments/{env}/services/{serviceName}/sla/{frequency} | | | Get SLA for given organization id, department id, product, environment, service name and frequency|
+		
+#### **Department/ Product / Environemnt / Microservice/ (Gw/LB/App/Data layer) Wise SlA's	**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/products/{product}/environments/{env}/services/{serviceName}/{cloudElementType}/sla/{frequency} | | | Get SLA for given organization id, department id, product, environment, service name, cloud element type and frequency|
+|GET | /organizations/{orgId}/departments/{depId}/products/{product}/environments/{env}/services/{serviceName}/{serviceType}/sla/{frequency} | | | Get SLA for given organization id, department id, product, environment, service name, service type and frequency|
+
+
+
+
+### **Please verify entity checklist -**
+
+- Organization
+- Department 
+- Product
+- Environment
+- MicroServices (GW/LB/App/Data Layers)
+- Cloud Element (cluster/ cloud-managed elements / global elements / gateway elements)
+- Landing Zones
+- Product Enclaves
+- Artifact Catalogue
+- Artifacts
+- Library
+- Automation-Jobs
+- ToolChains
+- Service Cost & Quaity Trend 
+- Process Cost & Quality Trend
+
+## **Please verify the metadata checklists :**
+
+App_Services_Type -- 
+Like NodesJs / Golang / Java / Python Api Server / Lambda / StepFunction / Batch
+
+Data_Services_Type
+SQLDB (Mysql/Mssql/Postgresql) , CacheDB(Redis/Memcache) , SearchDB(Opensearch/ ElasticSearch) , NOSQL DB (Mongo/ Dynamo ), GRAPH DB , METRIC DB , LOG DB , Object Store(S3) , Github 
+
+Data stored as follows:
+
+Mysql    	SQLDB
+Mssql    	SQLDB
+Postgresql 	SQLDB
+Redis		CacheDB
+MemCache 	CacheDB
+HazzleCast      CacheDB
+ElasticSearch   SearchDB
+OpenSearch      SearchDB
+Dynamo		NOSQL DB
+Mongo		NOSQL DB
+
+
+Master ENVTYPE -- DEV/TEST/STAGE/PROD
+
+
 
 
 ## **Please give endpoints for the following Provisioning --**
