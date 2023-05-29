@@ -1,0 +1,23 @@
+[
+    {
+        "cloud": "aws",
+        "environmentSummaryList": [
+            {
+                "appService": 6,
+                "dataService": 0,
+                "landingZone": "456262373",
+                "product": 6,
+                "cloud": "aws",
+                "productEnclave": 3
+            },
+            {
+                "appService": 4,
+                "dataService": 0,
+                "landingZone": "456262800",
+                "product": 4,
+                "cloud": "aws",
+                "productEnclave": 2
+            }
+        ]
+    }
+]

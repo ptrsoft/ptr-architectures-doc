@@ -1,0 +1,30 @@
+[
+  {
+      "alerts": 0,
+      "assets": 18270,
+      "environments": 18,
+      "totalBilling": 0,
+      "cloud": "aws"
+  },
+  {
+      "alerts": 0,
+      "assets": 28420,
+      "environments": 28,
+      "totalBilling": 0,
+      "cloud": "azure"
+  },
+  {
+      "alerts": 0,
+      "assets": 21315,
+      "environments": 21,
+      "totalBilling": 0,
+      "cloud": "gcp"
+  },
+  {
+      "alerts": 0,
+      "assets": 22330,
+      "environments": 22,
+      "totalBilling": 0,
+      "cloud": "kubernetes"
+  }
+]
