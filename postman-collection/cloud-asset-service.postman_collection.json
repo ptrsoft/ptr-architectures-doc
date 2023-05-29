@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "86783fd3-6214-44b9-befe-b78c4ce19ec8",
+		"_postman_id": "6f1bb95c-40e0-4343-9b14-b62f4e20cbdd",
 		"name": "cloud-asset-service",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "11946453"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -1171,6 +1170,338 @@
 		{
 			"name": "Query",
 			"item": [
+				{
+					"name": "organization wise",
+					"item": [
+						{
+							"name": "departments",
+							"item": [
+								{
+									"name": "organization_department",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1",
+													"disabled": true
+												},
+												{
+													"key": "name",
+													"value": "jj",
+													"disabled": true
+												},
+												{
+													"key": "createdBy",
+													"value": "e",
+													"disabled": true
+												},
+												{
+													"key": "landingZone",
+													"value": "657907747545",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "products",
+							"item": [
+								{
+									"name": "organization_products",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/products",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"products"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "landing Zones",
+							"item": [
+								{
+									"name": "organization_landingZone",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/landing-zone",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"landing-zone"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "product enclaves",
+							"item": [
+								{
+									"name": "organization_productEnclave",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/product-enclave",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"product-enclave"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "organization and department wise",
+					"item": [
+						{
+							"name": "products",
+							"item": [
+								{
+									"name": "organization_departments_products",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/products",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"products"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "landing zones",
+							"item": [
+								{
+									"name": "organization_department_landingZone",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/landing-zone",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"landing-zone"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "product enclaves",
+							"item": [
+								{
+									"name": "organization_departments_productEnclave",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/product-enclave",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"product-enclave"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "organization and cloud wise landing Zones",
+					"item": [
+						{
+							"name": "organization_cloudname_landingZone",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseAssetUrl}}/organizations/1/cloud/aws/landing-zone",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"organizations",
+										"1",
+										"cloud",
+										"aws",
+										"landing-zone"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "organization, department and cloud wise landing Zones",
+					"item": [
+						{
+							"name": "organization_department_cloudname_landingZone",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseAssetUrl}}/organizations/1/departments/2/cloud/aws/landing-zone",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"organizations",
+										"1",
+										"departments",
+										"2",
+										"cloud",
+										"aws",
+										"landing-zone"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "organization and environment wise",
+					"item": []
+				},
+				{
+					"name": "organization, department and environment wise",
+					"item": []
+				},
+				{
+					"name": "organization and landing zone wise",
+					"item": [
+						{
+							"name": "product enclaves",
+							"item": [
+								{
+									"name": "organization_landingzone_productEnclave",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/landing-zone/567373484/product-enclave",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"landing-zone",
+												"567373484",
+												"product-enclave"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "organization, department and landing zone wise",
+					"item": [
+						{
+							"name": "product enclaves",
+							"item": [
+								{
+									"name": "organization_department_landingzone_productEnclave",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/landing-zone/567373484/product-enclave",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"landing-zone",
+												"567373484",
+												"product-enclave"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
 				{
 					"name": "orgwise_assets-count",
 					"request": {
