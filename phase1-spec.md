@@ -579,46 +579,74 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 
 ## Queries End Points
 
-### **For every Organization**
-#### **department**
+
+#### **1. organization wise**
+
+##### **departments**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/departments | | [Response JSONlink](./jsons/Department/all.json) | Get list of department of a given organization id |
+|GET | /organizations/{orgId}/departments | | [Response JSONlink](./jsons/Department/all.json) | Get departments of a given organization id |
 
-#### **products**
+##### **products**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/products | | | Get list of products of given organization id |
-|GET | /organizations/{orgId}/departments/{depId}/products | | | Get list of products of given organization id and department id |
+|GET | /organizations/{orgId}/products | | | products of an organization |
 
+##### **landing Zones**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/landing-zone | | | organization wise landing-zones  |
 
-#### **products environment**
+##### **product enclaves**
+|GET | /organizations/{orgId}/product-enclave | | | organization wise product-enclaves |
+
+#### **2. organization and department wise**
+##### **products**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/departments/{depId}/products | | | organization and department wise products|
+
+##### **landing zones**
+|GET | /organizations/{orgId}/departments/{depId}/landing-zone | | | organization and department wise landing-zones|
+
+##### **product enclaves**
+|GET | /organizations/{orgId}/departments/{depId}/product-enclave | | | organization and department wise product-enclaves |
+
+#### **3. organization and cloud wise landing Zones**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/cloud/{cloudName}/landing-zone | | | organization and cloud wise landing-zones|
+
+#### **4. organization, department and cloud wise landing Zones**
+|GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/landing-zone | | | organization, department and cloud wise landing-zones|
+
+#### **5. organization and environment wise**
+##### **products**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/environments/{env}/products | | | Get list of products of given organization id and deployment environment name |
-|GET | /organizations/{orgId}/departments/{depId}/environments/{env}/products | | | Get list of products of given organization id, department id and deployment environment name |
-		
-		
-#### **associated landing Zones**
+
+#### **6. organization, department and environment wise**
+##### **products**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/landing-zone | | | Get list of landing-zones of given organization id |
-|GET | /organizations/{orgId}/departments/{depId}/landing-zone | | | Get list of landing-zones of given organization id and department id |
-|GET | /organizations/{orgId}/cloud/{cloudName}/landing-zone | | | Get list of landing-zones of given organization id and cloud name |
-|GET | /organizations/{orgId}/cloud/associated-landing-zone | | | Get list of associated landing-zones of every cloud of given organization id |
-|GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/landing-zone | | | Get list of landing-zones of given organization id, department id and cloud name|
+|GET | /organizations/{orgId}/departments/{depId}/environments/{env}/products | | | organization, department and deployment environment wise products |
+	
 
-
-#### **product enclaves**
+#### **7. organization, landing zone wise**
+##### **product enclaves**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/product-enclave | | | Get list of product-enclaves of given organization id |
-|GET | /organizations/{orgId}/departments/{depId}/product-enclave | | | Get list of product-enclaves of given organization id and department id |
 |GET | /organizations/{orgId}/landing-zone/{landingZone}/product-enclave | | | Get list of product-enclaves of given organization id and landing-zone |
+
+#### **8. organization, department, landing zone wise**
+##### **product enclaves**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/product-enclave | | | Get list of product-enclaves of given organization id, department id and landing-zone |
+
 		
-		
-#### **department wise product and services cost & SLA's**
+#### **department wise product, services cost & SLA's**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/services | | | Get list of services of given organization id |
