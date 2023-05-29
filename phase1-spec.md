@@ -607,7 +607,7 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/cloud-environments/count | | | organization wise resource count for each cloud |
 
-##### **list of landing zone and its associated product enclaves, products, and app and data services**
+##### **list of landing zone and its associated product enclaves, products, app and data services**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/cloud-environments/summary | | | landing zones and its associated product enclaves, products, app and data services |
