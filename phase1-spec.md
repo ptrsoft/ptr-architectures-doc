@@ -602,6 +602,16 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/product-enclave | | | organization wise product-enclaves |
 
+##### **environment resource counts**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/cloud-environments/count | | | organization wise resource count for each cloud |
+
+##### **list of landing zone and its associated product enclaves, products, and app and data services**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
+|GET | /organizations/{orgId}/cloud-environments/summary | | | landing zones and its associated product enclaves, products, app and data services |
+
 #### **2. organization and department wise**
 ##### **products**
 | method | end point | Request | Response | Description | 
@@ -641,13 +651,13 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 |GET | /organizations/{orgId}/departments/{depId}/environments/{env}/products | | | organization, department and deployment environment wise products |
 	
 
-#### **7. organization, landing zone wise**
+#### **7. organization and landing zone wise**
 ##### **product enclaves**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/landing-zone/{landingZone}/product-enclave | | | Get list of product-enclaves of given organization id and landing-zone |
 
-#### **8. organization, department, landing zone wise**
+#### **8. organization, department and landing zone wise**
 ##### **product enclaves**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
