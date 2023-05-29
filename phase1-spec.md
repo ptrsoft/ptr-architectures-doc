@@ -522,7 +522,7 @@ This table will hold dev/sec/ops dashboards and datasource master datas.
 
 
 # CMDB API End Points
-## Base API : http://localhost:5057/api
+## Base API : http://localhost:6057/api
 ## [CURD APIs](./md-files/cmd-curd-apis.md) 
 
 ## **Please give endpoints for the following Queries --**
@@ -598,6 +598,8 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 |GET | /organizations/{orgId}/landing-zone | | | organization wise landing-zones  |
 
 ##### **product enclaves**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/product-enclave | | | organization wise product-enclaves |
 
 #### **2. organization and department wise**
@@ -607,9 +609,13 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 |GET | /organizations/{orgId}/departments/{depId}/products | | | organization and department wise products|
 
 ##### **landing zones**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/departments/{depId}/landing-zone | | | organization and department wise landing-zones|
 
 ##### **product enclaves**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/departments/{depId}/product-enclave | | | organization and department wise product-enclaves |
 
 #### **3. organization and cloud wise landing Zones**
@@ -618,6 +624,8 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 |GET | /organizations/{orgId}/cloud/{cloudName}/landing-zone | | | organization and cloud wise landing-zones|
 
 #### **4. organization, department and cloud wise landing Zones**
+| method | end point | Request | Response | Description | 
+|:---|:---|:---|:---|:---|
 |GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/landing-zone | | | organization, department and cloud wise landing-zones|
 
 #### **5. organization and environment wise**
