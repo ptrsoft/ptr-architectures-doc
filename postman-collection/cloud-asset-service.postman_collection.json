@@ -1432,11 +1432,57 @@
 				},
 				{
 					"name": "organization and environment wise",
-					"item": []
+					"item": [
+						{
+							"name": "organization_env_Product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseAssetUrl}}/organizations/1/environments/PROD/products",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"organizations",
+										"1",
+										"environments",
+										"PROD",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				},
 				{
 					"name": "organization, department and environment wise",
-					"item": []
+					"item": [
+						{
+							"name": "organization_department_env_product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseAssetUrl}}/organizations/1/departments/2/environments/PROD/products",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"organizations",
+										"1",
+										"departments",
+										"2",
+										"environments",
+										"PROD",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				},
 				{
 					"name": "organization and landing zone wise",
