@@ -582,51 +582,23 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 
 #### **1. organization wise**
 
-##### **departments**
-| method | end point | Request | Response | Description | 
+| description | method | end point | Request | Response | 
 |:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/departments | | [Response JSONlink](./jsons/Department/all.json) | Get departments of a given organization id |
-
-##### **products**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/products | | | products of an organization |
-
-##### **landing Zones**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/landing-zone | | | organization wise landing-zones  |
-
-##### **product enclaves**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/product-enclave | | | organization wise product-enclaves |
-
-##### **environment resource counts**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/cloud-environments/count | | | organization wise resource count for each cloud |
-
-##### **list of landing zone and its associated product enclaves, products, app and data services**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/cloud-environments/summary | | | landing zones and its associated product enclaves, products, app and data services |
+|departments|GET | /organizations/{orgId}/departments | | [Response JSON](./jsons/Department/all.json)|
+|products|GET | /organizations/{orgId}/products | | |
+|landing Zones |GET | /organizations/{orgId}/landing-zone | | |
+|product enclaves|GET | /organizations/{orgId}/product-enclave | | |
+|Resource Count|GET | /organizations/{orgId}/cloud-environments/count | | |
+|Resource Summary|GET | /organizations/{orgId}/cloud-environments/summary | | |
+|services |GET | /organizations/{orgId}/services | | |
 
 #### **2. organization and department wise**
-##### **products**
-| method | end point | Request | Response | Description | 
+| description | method | end point | Request | Response | 
 |:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/departments/{depId}/products | | | organization and department wise products|
-
-##### **landing zones**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/departments/{depId}/landing-zone | | | organization and department wise landing-zones|
-
-##### **product enclaves**
-| method | end point | Request | Response | Description | 
-|:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/departments/{depId}/product-enclave | | | organization and department wise product-enclaves |
+|products|GET | /organizations/{orgId}/departments/{depId}/products | | |
+|landing-zone |GET | /organizations/{orgId}/departments/{depId}/landing-zone | | | 
+|product enclave |GET | /organizations/{orgId}/departments/{depId}/product-enclave | | |
+|services |GET | /organizations/{orgId}/departments/{depId}/services | | |
 
 #### **3. organization and cloud wise landing Zones**
 | method | end point | Request | Response | Description | 
@@ -667,8 +639,6 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 #### **department wise product, services cost & SLA's**
 | method | end point | Request | Response | Description | 
 |:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/services | | | Get list of services of given organization id |
-|GET | /organizations/{orgId}/departments/{depId}/services | | | Get list of services of given organization id and department id |
 |GET | /organizations/{orgId}/cloud/{cloudName}/services | | | Get list of services of given organization id and cloud name|
 |GET | /organizations/{orgId}/departments/{depId}/cloud/{cloudName}/services | | | Get list of services of given organization id, department id and cloud name |
 |GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/cloud/{cloudName}/services | | | Get list of services of given organization id, department id, landing-zone and cloud name|
