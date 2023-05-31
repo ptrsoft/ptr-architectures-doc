@@ -577,7 +577,7 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
     - Department/ Product / Environemnt / Microservice/ (Gw/LB/App/Data layer) Wise SlA's
   
 
-## Queries End Points
+## Query API End Points
 
 
 #### **1. organization wise**
@@ -588,8 +588,8 @@ Find the SLA's (daily/weekly/monthly) of the entire organization
 |products|GET | /organizations/{orgId}/products | | |
 |landing Zones |GET | /organizations/{orgId}/landing-zone | | |
 |product enclaves|GET | /organizations/{orgId}/product-enclave | | |
-|Resource Count|GET | /organizations/{orgId}/cloud-environments/count | | |
-|Resource Summary|GET | /organizations/{orgId}/cloud-environments/summary | | |
+|resource count|GET | /organizations/{orgId}/cloud-environments/count | | |
+|resource summary|GET | /organizations/{orgId}/cloud-environments/summary | | |
 |services |GET | /organizations/{orgId}/services | | |
 
 #### **2. organization and department wise**

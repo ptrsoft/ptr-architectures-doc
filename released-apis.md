@@ -13,10 +13,23 @@
 |Deployment Environment | [URL](https://github.com/AppkubeCloud/appkube-architectures/blob/main/md-files/cmd-curd-apis.md#deployment-environment) |
 |Catalogue | [URL](https://github.com/AppkubeCloud/appkube-architectures/blob/main/md-files/cmd-curd-apis.md#catalogue) |
 
-### 2. Query API End Points
-| method | end point | Request | Response | Description | 
+### ## Query API End Points
+#### **1. organization wise**
+
+| description | method | end point | Request | Response | 
 |:---|:---|:---|:---|:---|
-|GET | /organizations/{orgId}/cloud-environments/count | | [Response JSONlink](./jsons/\Cloud_Element_Summary/cloud-wise-resource-count.json) | count of landing zone and its associated assets, alerts and billing cost for each cloud of an organization |
-|GET | /organizations/{orgId}/cloud/{cloud}/cloud-environments/count | | [Response JSONlink](./jsons/\Cloud_Element_Summary/single-cloud-resource-count.json) | count of landing zone and its associated assets, alerts and billing cost for given cloud of an organization |
-|GET | /organizations/{orgId}/cloud-environments/summary | | [Response JSONlink](./jsons/\Cloud_Element_Summary/cloud-wise-product-list.json) | list of landing zone and its associated product enclaves, products, and app and data services for a given organization |
-|GET | /organizations/{orgId}/cloud/{cloud}/cloud-environments/summary | | [Response JSONlink](./jsons/\Cloud_Element_Summary/single-cloud-wise-product-list.json) | list of landing zone and its associated product enclaves, products, and app and data services for a given organization and cloud |
+|departments|GET | /organizations/{orgId}/departments | | [Response JSON](./jsons/Department/all.json)|
+|products|GET | /organizations/{orgId}/products | | |
+|landing Zones |GET | /organizations/{orgId}/landing-zone | | |
+|product enclaves|GET | /organizations/{orgId}/product-enclave | | |
+|resource count|GET | /organizations/{orgId}/cloud-environments/count | | |
+|resource summary|GET | /organizations/{orgId}/cloud-environments/summary | | |
+|services |GET | /organizations/{orgId}/services | | |
+
+#### **2. organization and department wise**
+| description | method | end point | Request | Response | 
+|:---|:---|:---|:---|:---|
+|products|GET | /organizations/{orgId}/departments/{depId}/products | | |
+|landing-zone |GET | /organizations/{orgId}/departments/{depId}/landing-zone | | | 
+|product enclave |GET | /organizations/{orgId}/departments/{depId}/product-enclave | | |
+|services |GET | /organizations/{orgId}/departments/{depId}/services | | |
