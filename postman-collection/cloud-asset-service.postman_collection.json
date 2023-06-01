@@ -347,167 +347,167 @@
 			]
 		},
 		{
-			"name": "CloudEnvironment",
-			"item": [
-				{
-					"name": "getAll",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseAssetUrl}}/cloud-environments",
-							"host": [
-								"{{baseAssetUrl}}"
-							],
-							"path": [
-								"cloud-environments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getById",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseAssetUrl}}/cloud-environments/2",
-							"host": [
-								"{{baseAssetUrl}}"
-							],
-							"path": [
-								"cloud-environments",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "search",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseAssetUrl}}/cloud-environments/search?accountId=657907747545&departmentId=4",
-							"host": [
-								"{{baseAssetUrl}}"
-							],
-							"path": [
-								"cloud-environments",
-								"search"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "name",
-									"value": "Test Client 1",
-									"disabled": true
-								},
-								{
-									"key": "accountId",
-									"value": "657907747545"
-								},
-								{
-									"key": "status",
-									"value": "Active",
-									"disabled": true
-								},
-								{
-									"key": "cloud",
-									"value": "aws",
-									"disabled": true
-								},
-								{
-									"key": "departmentId",
-									"value": "4"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "add",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"AZURE account for R&D department\",\r\n    \"displayName\": \"AZURE R&D\",\r\n    \"roleArn\":\"345678\",\r\n    \"cloud\":\"AZURE\",\r\n    \"department\":{\r\n        \"id\": 8\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseAssetUrl}}/cloud-environments",
-							"host": [
-								"{{baseAssetUrl}}"
-							],
-							"path": [
-								"cloud-environments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteById",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseAssetUrl}}/cloud-environment/9",
-							"host": [
-								"{{baseAssetUrl}}"
-							],
-							"path": [
-								"cloud-environment",
-								"9"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 87701,\r\n    \"externalId\":\"234@90\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseAssetUrl}}/cloud-environment/aws",
-							"host": [
-								"{{baseAssetUrl}}"
-							],
-							"path": [
-								"cloud-environment",
-								"aws"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "CloudElementSummary",
 			"item": [
+				{
+					"name": "CloudEnvironment",
+					"item": [
+						{
+							"name": "getAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseAssetUrl}}/cloud-environments",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"cloud-environments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseAssetUrl}}/cloud-environments/2",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"cloud-environments",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseAssetUrl}}/cloud-environments/search?accountId=657907747545&departmentId=4",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"cloud-environments",
+										"search"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Test Client 1",
+											"disabled": true
+										},
+										{
+											"key": "accountId",
+											"value": "657907747545"
+										},
+										{
+											"key": "status",
+											"value": "Active",
+											"disabled": true
+										},
+										{
+											"key": "cloud",
+											"value": "aws",
+											"disabled": true
+										},
+										{
+											"key": "departmentId",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"AZURE account for R&D department\",\r\n    \"displayName\": \"AZURE R&D\",\r\n    \"roleArn\":\"345678\",\r\n    \"cloud\":\"AZURE\",\r\n    \"department\":{\r\n        \"id\": 8\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseAssetUrl}}/cloud-environments",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"cloud-environments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseAssetUrl}}/cloud-environment/9",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"cloud-environment",
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 87701,\r\n    \"externalId\":\"234@90\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseAssetUrl}}/cloud-environment/aws",
+									"host": [
+										"{{baseAssetUrl}}"
+									],
+									"path": [
+										"cloud-environment",
+										"aws"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
 				{
 					"name": "getAll",
 					"request": {
@@ -1290,6 +1290,116 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "micro service",
+							"item": [
+								{
+									"name": "organization_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_products_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/products/HRMS/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"products",
+												"HRMS",
+												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_env_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/environments/1/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"environments",
+												"1",
+												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_serviceType_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/service-type/BUSINESS/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"service-type",
+												"BUSINESS",
+												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_product_env_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/products/Balancer/environments/2/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"products",
+												"Balancer",
+												"environments",
+												"2",
+												"services"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				},
@@ -1367,6 +1477,126 @@
 												"departments",
 												"1",
 												"product-enclave"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "micro serivce",
+							"item": [
+								{
+									"name": "organization_departments_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/2/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"2",
+												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_product_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/2/products/Balancer/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"2",
+												"products",
+												"Balancer",
+												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_env_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/environments/1/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"environments",
+												"1",
+												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_product_env_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/2/products/Balancer/environments/2/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"2",
+												"products",
+												"Balancer",
+												"environments",
+												"2",
+												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_serviceType_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/2/service-type/BUSINESS/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"2",
+												"service-type",
+												"BUSINESS",
+												"services"
 											]
 										}
 									},
@@ -1715,6 +1945,37 @@
 									"value": "aws",
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Micro -Service",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admission Service LB\",\r\n    \"departmentName\": \"App\",\r\n    \"product\": \"Balancer\",\r\n    \"environment\": \"APp\",\r\n    \"serviceType\": \"BUSINESS\",\r\n    \"department\": {\r\n        \"id\": 2\r\n    },\r\n    \"deploymentEnvironment\": {\r\n        \"id\": 2\r\n    },\r\n    \"serviceTopology\": {\r\n        \"ApiGateway\": {\r\n            \"name\": \"Admission Api Gw\",\r\n            \"elementType\": \"AWS Api GW\",\r\n            \"CloudElementId\": \"1\"\r\n        },\r\n        \"Balancer\": {\r\n            \"name\": \"Admission Service LB\",\r\n            \"elementType\": \"AWS NLB\",\r\n            \"CloudElementId\": \"2\"\r\n        },\r\n        \"App\": {\r\n            \"name\": \"Admission Go Api Server\",\r\n            \"elementType\": \"AWS EKS\",\r\n            \"CloudElementId\": \"3\",\r\n            \"UsesDataServices\": [\r\n                {\r\n                    \"name\": \"Admission Cache DB\",\r\n                    \"elementType\": \"AWS Redis Cache\",\r\n                    \"CloudElementId\": \"4\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission RDS Postgresql DB\",\r\n                    \"elementType\": \"AWS RDS\",\r\n                    \"CloudElementId\": \"5\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission Search DB\",\r\n                    \"elementType\": \"AWS Opensearch\",\r\n                    \"CloudElementId\": \"1243\"\r\n                }\r\n            ],\r\n            \"DependOnOtherServices\": [\r\n                {\r\n                    \"serviceName\": \"Fees\",\r\n                    \"serviceId\": \"12334\",\r\n                    \"Api's\": []\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseAssetUrl}}/micro-services",
+							"host": [
+								"{{baseAssetUrl}}"
+							],
+							"path": [
+								"micro-services"
 							]
 						}
 					},

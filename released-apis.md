@@ -25,6 +25,11 @@
 |resource count|GET | /organizations/{orgId}/cloud-environments/count | | |
 |resource summary|GET | /organizations/{orgId}/cloud-environments/summary | | |
 |services |GET | /organizations/{orgId}/services | | |
+|services products |GET | /organizations/{orgId}/products/{product}/services | | |
+|services environments |GET | /organizations/{orgId}/environments/{env}/services | | |
+|services products environments |GET | /organizations/{orgId}/products/{product}/environments/{env}/services | | |
+|services service-type |GET | /organizations/{orgId}/service-type/{serviceType}/services | | |
+
 
 #### **2. organization and department wise**
 | description | method | end point | Request | Response | 
@@ -33,3 +38,7 @@
 |landing-zone |GET | /organizations/{orgId}/departments/{depId}/landing-zone | | | 
 |product enclave |GET | /organizations/{orgId}/departments/{depId}/product-enclave | | |
 |services |GET | /organizations/{orgId}/departments/{depId}/services | | |
+|services products |GET | /organizations/{orgId}/departments/{depId}/products/{product}/services | | |
+|services environments |GET | /organizations/{orgId}/departments/{depId}/environments/{env}/services | | |
+|services products environments |GET | /organizations/{orgId}/departments/{depId}/products/{product}/environments/{env}/services | | |
+|services service-type |GET | /organizations/{orgId}/departments/{depId}/service-type/{serviceType}/services | | |
