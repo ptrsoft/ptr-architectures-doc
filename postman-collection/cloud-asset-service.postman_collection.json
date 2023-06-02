@@ -1292,7 +1292,7 @@
 							]
 						},
 						{
-							"name": "micro service",
+							"name": "micro serivce",
 							"item": [
 								{
 									"name": "organization_micro_services",
@@ -1377,23 +1377,134 @@
 									"response": []
 								},
 								{
-									"name": "organization_product_env_micro_services",
+									"name": "organization_landingZone_microServices",
 									"request": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseAssetUrl}}/organizations/1/products/Balancer/environments/2/services",
+											"raw": "{{baseAssetUrl}}/organizations/1/landing-zone/567373484/services",
 											"host": [
 												"{{baseAssetUrl}}"
 											],
 											"path": [
 												"organizations",
 												"1",
-												"products",
-												"Balancer",
-												"environments",
-												"2",
+												"landing-zone",
+												"567373484",
 												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_landingZone_product_microServices Copy",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/landing-zone/567373484/products",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"landing-zone",
+												"567373484",
+												"products"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "micro service cost",
+							"item": [
+								{
+									"name": "organization_serviceName_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/services/Admission/service-cost",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"services",
+												"Admission",
+												"service-cost"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_serviceName_daily_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/services/Admission/service-cost/daily",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"services",
+												"Admission",
+												"service-cost",
+												"daily"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_serviceName_weekly_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/services/Admission/service-cost/weekly",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"services",
+												"Admission",
+												"service-cost",
+												"weekly"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_serviceName_monthly_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/services/Admission/service-cost/monthly",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"services",
+												"Admission",
+												"service-cost",
+												"monthly"
 											]
 										}
 									},
@@ -1597,6 +1708,152 @@
 												"service-type",
 												"BUSINESS",
 												"services"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_department_landingZone_product_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/landing-zone/567373484/products",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"landing-zone",
+												"567373484",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_department_landingZone_services_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/landing-zone/567373484/services",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"landing-zone",
+												"567373484",
+												"services"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "micro service cost",
+							"item": [
+								{
+									"name": "organization_departments_serviceName_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/services/Admission/service-cost",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"services",
+												"Admission",
+												"service-cost"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_serviceName_daily_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/services/Admission/service-cost/daily",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"services",
+												"Admission",
+												"service-cost",
+												"daily"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_serviceName_weekly_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/services/Admission/service-cost/weekly",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"services",
+												"Admission",
+												"service-cost",
+												"weekly"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_serviceName_monthly_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/1/services/Admission/service-cost/monthly",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"1",
+												"services",
+												"Admission",
+												"service-cost",
+												"monthly"
 											]
 										}
 									},
@@ -1962,7 +2219,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Admission Service LB\",\r\n    \"departmentName\": \"App\",\r\n    \"product\": \"Balancer\",\r\n    \"environment\": \"APp\",\r\n    \"serviceType\": \"BUSINESS\",\r\n    \"department\": {\r\n        \"id\": 2\r\n    },\r\n    \"deploymentEnvironment\": {\r\n        \"id\": 2\r\n    },\r\n    \"serviceTopology\": {\r\n        \"ApiGateway\": {\r\n            \"name\": \"Admission Api Gw\",\r\n            \"elementType\": \"AWS Api GW\",\r\n            \"CloudElementId\": \"1\"\r\n        },\r\n        \"Balancer\": {\r\n            \"name\": \"Admission Service LB\",\r\n            \"elementType\": \"AWS NLB\",\r\n            \"CloudElementId\": \"2\"\r\n        },\r\n        \"App\": {\r\n            \"name\": \"Admission Go Api Server\",\r\n            \"elementType\": \"AWS EKS\",\r\n            \"CloudElementId\": \"3\",\r\n            \"UsesDataServices\": [\r\n                {\r\n                    \"name\": \"Admission Cache DB\",\r\n                    \"elementType\": \"AWS Redis Cache\",\r\n                    \"CloudElementId\": \"4\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission RDS Postgresql DB\",\r\n                    \"elementType\": \"AWS RDS\",\r\n                    \"CloudElementId\": \"5\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission Search DB\",\r\n                    \"elementType\": \"AWS Opensearch\",\r\n                    \"CloudElementId\": \"1243\"\r\n                }\r\n            ],\r\n            \"DependOnOtherServices\": [\r\n                {\r\n                    \"serviceName\": \"Fees\",\r\n                    \"serviceId\": \"12334\",\r\n                    \"Api's\": []\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}",
+							"raw": "{\r\n    \"name\": \"Admission\",\r\n    \"departmentName\": \"product\",\r\n    \"product\": \"Balancer\",\r\n    \"environment\": \"PROUD\",\r\n    \"serviceType\": \"BUSINESS\",\r\n    \"department\": {\r\n        \"id\": 2\r\n    },\r\n    \"deploymentEnvironment\": {\r\n        \"id\": 2\r\n    },\r\n    \"serviceTopology\": {\r\n        \"ApiGateway\": {\r\n            \"name\": \"Admission Api Gw\",\r\n            \"elementType\": \"AWS Api GW\",\r\n            \"CloudElementId\": \"1\"\r\n        },\r\n        \"Balancer\": {\r\n            \"name\": \"Admission Service LB\",\r\n            \"elementType\": \"AWS NLB\",\r\n            \"CloudElementId\": \"2\"\r\n        },\r\n        \"App\": {\r\n            \"name\": \"Admission Go Api Server\",\r\n            \"elementType\": \"AWS EKS\",\r\n            \"CloudElementId\": \"3\",\r\n            \"UsesDataServices\": [\r\n                {\r\n                    \"name\": \"Admission Cache DB\",\r\n                    \"elementType\": \"AWS Redis Cache\",\r\n                    \"CloudElementId\": \"4\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission RDS Postgresql DB\",\r\n                    \"elementType\": \"AWS RDS\",\r\n                    \"CloudElementId\": \"5\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission Search DB\",\r\n                    \"elementType\": \"AWS Opensearch\",\r\n                    \"CloudElementId\": \"1243\"\r\n                }\r\n            ],\r\n            \"DependOnOtherServices\": [\r\n                {\r\n                    \"serviceName\": \"Fees\",\r\n                    \"serviceId\": \"12334\",\r\n                    \"Api's\": []\r\n                }\r\n            ]\r\n        }\r\n    },\r\n   \"costJson\":{\r\n    \"DAILYCOST\": {\r\n      \"Day1\": \"99\",\r\n      \"Day2\": \"100\",\r\n      \"Day3\": \"99\",\r\n      \"Day4\": \"100\",\r\n      \"Day5\": \"99\",\r\n      \"Day6\": \"100\",\r\n      \"Day7\": \"100\"\r\n    },\r\n    \"WEEKLYCOST\": {\r\n      \"Week1\": \"99\",\r\n      \"Week2\": \"100\",\r\n      \"Week3\": \"99\",\r\n      \"Week4\": \"100\"\r\n    },\r\n    \"MONTHLYCOST\": {\r\n      \"Month1\": \"99\",\r\n      \"Month2\": \"100\",\r\n      \"Month3\": \"99\",\r\n      \"Month4\": \"100\"\r\n    }\r\n  \r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

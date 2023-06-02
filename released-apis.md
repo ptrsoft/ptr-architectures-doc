@@ -29,8 +29,12 @@
 |services environments |GET | /organizations/{orgId}/environments/{env}/services | | |
 |services products environments |GET | /organizations/{orgId}/products/{product}/environments/{env}/services | | |
 |services service-type |GET | /organizations/{orgId}/service-type/{serviceType}/services | | |
-
-
+|services service-cost |GET | /organizations/{orgId}/services/{serviceName}/service-cost | | |
+|services service-daily-cost |GET | /organizations/{orgId}/services/{serviceName}/service-cost/daily | | |
+|services service-weekly-cost |GET | /organizations/{orgId}/services/{serviceName}/service-cost/weekly | | |
+|services service-monthly-cost |GET | /organizations/{orgId}/services/{serviceName}/service-cost/monthly | | |
+|services service-landing-zone-services-name |GET | /organizations/{orgId}/landing-zone/{landingZone}/services | | |
+|services service-landing-zone-products |GET | /organizations/{orgId}/landing-zone/{landingZone}/products | | |
 #### **2. organization and department wise**
 | description | method | end point | Request | Response | 
 |:---|:---|:---|:---|:---|
@@ -42,3 +46,9 @@
 |services environments |GET | /organizations/{orgId}/departments/{depId}/environments/{env}/services | | |
 |services products environments |GET | /organizations/{orgId}/departments/{depId}/products/{product}/environments/{env}/services | | |
 |services service-type |GET | /organizations/{orgId}/departments/{depId}/service-type/{serviceType}/services | | |
+|services service-cost |GET | /organizations/{orgId}/departments/{depId}/services/{serviceName}/service-cost | | |
+|services service-daily-cost |GET | /organizations/{orgId}/departments/{depId}/services/{serviceName}/service-cost/daily | | |
+|services service-weekly-cost |GET | /organizations/{orgId}/departments/{depId}/services/{serviceName}/service-cost/weekly | | |
+|services service-monthly-cost |GET | /organizations/{orgId}/departments/{depId}/services/{serviceName}/service-cost/monthly | | |
+|services service-landing-zone-services-name |GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services | | |
+|services service-landing-zone-products |GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/products | | |
