@@ -212,7 +212,7 @@ Method - GET
 ```
 ```
 API End Point - /organizations/{orgId}/service-type/{serviceType}/services
-Request - Path variable {orgId}, Path variable serviceType 
+Request - Path variable {orgId}, Path variable {serviceType} 
 Response - List<String>
 ```
 
@@ -233,7 +233,7 @@ Method - GET
 ```
 ```
 API End Point - /organizations/{orgId}/services/{serviceName}/service-cost
-Request - Path variable {orgId}, Path variable serviceType 
+Request - Path variable {orgId}, Path variable {serviceName} 
 Response - List<ObjectNode>
 ```
 
@@ -253,7 +253,7 @@ Method - GET
 ```
 ```
 API End Point - organizations/{orgId}/services/{serviceName}/service-cost/daily
-Request - Path variable {orgId}, Path variable serviceType 
+Request - Path variable {orgId}, Path variable {serviceName} 
 Response - List<ObjectNode>
 ```
 
@@ -273,7 +273,7 @@ Method - GET
 ```
 ```
 API End Point - organizations/{orgId}/services/{serviceName}/service-cost/weekly
-Request - Path variable {orgId}, Path variable serviceType 
+Request - Path variable {orgId}, Path variable {serviceName} 
 Response - List<ObjectNode>
 ```
 
@@ -293,7 +293,7 @@ Method - GET
 ```
 ```
 API End Point - organizations/{orgId}/services/{serviceName}/service-cost/monthly
-Request - Path variable {orgId}, Path variable serviceType 
+Request - Path variable {orgId}, Path variable {serviceType} 
 Response - List<ObjectNode>
 ```
 
@@ -306,14 +306,14 @@ Response - List<ObjectNode>
 	5. JPA repository returns this list of services-cost to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
 <hr>
 
-### `1.11. organization wise services service-landing-zone-services-name`
+### `1.15. organization wise services service-landing-zone-services-name`
 
 ```
 Method - GET
 ```
 ```
 API End Point - /organizations/{orgId}/landing-zone/{landingZone}/services
-Request - Path variable {orgId}, Path variable landingZone 
+Request - Path variable {orgId}, Path variable {landingZone} 
 Response - List<String>
 ```
 
@@ -326,14 +326,14 @@ Response - List<String>
 	5. JPA repository returns this list of services to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
 <hr>
 
-### `1.12. organization wise services service-landing-zone-services-products`
+### `1.16. organization wise services service-landing-zone-services-products`
 
 ```
 Method - GET
 ```
 ```
 API End Point - /organizations/{orgId}/landing-zone/{landingZone}/products
-Request - Path variable {orgId}, Path variable landingZone 
+Request - Path variable {orgId}, Path variable {landingZone} 
 Response - List<String>
 ```
 
@@ -347,7 +347,85 @@ Response - List<String>
 <hr>
 
 
+### `1.17. organization wise services service-sla`
 
+```
+Method - GET
+```
+```
+API End Point - /organizations/{orgId}/services/{name}/service-sla
+Request - Path variable {orgId}, Path variable {name} 
+Response - List<ObjectNode>
+```
+
+	1. Request passed to spring boot request controller 
+	2. Controller forward request to serivce class
+	3. Service class calls JPA repository 
+	4. There is method defines in the serive class - public List<ObjectNode> getOrganizationServiceSlaMicroServices(@Param("orgId") Long orgId,@Param("serviceName") String serviceName);
+		4.1 This getOrganizationServiceSlaMicroServices method accepts long type organization id and serviceName pass it to the native sql
+		4.2 Native sql returns the list of services-sla (List<ObjectNode>) of the given organization id and serviceName
+	5. JPA repository returns this list of services-sla to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
+<hr>
+
+### `1.18. organization wise services service-cureent-sla`
+
+```
+Method - GET
+```
+```
+API End Point - /organizations/{orgId}/services/{serviceName}/service/cureent-sla
+Request - Path variable {orgId}, Path variable {serviceName} 
+Response - List<ObjectNode>
+```
+
+	1. Request passed to spring boot request controller 
+	2. Controller forward request to serivce class
+	3. Service class calls JPA repository 
+	4. There is method defines in the serive class - public List<ObjectNode> getOrganizationServiceCurrentSlaMicroServices(@Param("orgId") Long orgId,@Param("serviceName") String serviceName);
+		4.1 This getOrganizationServiceCurrentSlaMicroServices method accepts long type organization id and serviceName pass it to the native sql
+		4.2 Native sql returns the list of services-current-sla (List<ObjectNode>) of the given organization id and serviceName
+	5. JPA repository returns this list of services-current-sla to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
+<hr>
+
+### `1.19. organization wise services service-weekly-sla`
+
+```
+Method - GET
+```
+```
+API End Point - /organizations/{orgId}/services/{serviceName}/service/weekly-sla
+Request - Path variable {orgId}, Path variable {serviceName} 
+Response - List<ObjectNode>
+```
+
+	1. Request passed to spring boot request controller 
+	2. Controller forward request to serivce class
+	3. Service class calls JPA repository 
+	4. There is method defines in the serive class - public List<ObjectNode> getOrganizationServiceWeeklySlaMicroServices(@Param("orgId") Long orgId,@Param("serviceName") String serviceName);
+		4.1 This getOrganizationServiceWeeklySlaMicroServices method accepts long type organization id and serviceName pass it to the native sql
+		4.2 Native sql returns the list of services-weekly-sla (List<ObjectNode>) of the given organization id and serviceName
+	5. JPA repository returns this list of services-weekly-sla to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
+<hr>
+
+### `1.20. organization wise services service-monthly-sla`
+
+```
+Method - GET
+```
+```
+API End Point - /organizations/{orgId}/services/{serviceName}/service/monthly-sla
+Request - Path variable {orgId}, Path variable {serviceName} 
+Response - List<ObjectNode>
+```
+
+	1. Request passed to spring boot request controller 
+	2. Controller forward request to serivce class
+	3. Service class calls JPA repository 
+	4. There is method defines in the serive class - public List<ObjectNode> getOrganizationServiceMonthlySlaMicroServices(@Param("orgId") Long orgId,@Param("serviceName") String serviceName);
+		4.1 This getOrganizationServiceMonthlySlaMicroServices method accepts long type organization id and serviceName pass it to the native sql
+		4.2 Native sql returns the list of services-monthly-sla (List<ObjectNode>) of the given organization id and serviceName
+	5. JPA repository returns this list of services-monthly-sla to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
+<hr>
 
 ### `2.organization and department wise products`
 ```
@@ -498,7 +576,7 @@ Method - GET
 ```
 ```
 API End Point - /organizations/{orgId}/departments/{depId}/service-type/{serviceType}/services
-Request - Path variable {orgId} , Path variable {depId} ,Path Variable  serviceType
+Request - Path variable {orgId} , Path variable {depId} ,Path Variable  {serviceType}
 Response - List<String>
 ```
 
@@ -632,7 +710,85 @@ Response - List<String>
 
 <hr>
 
+### `2.13.organization and department wise service-sla`
+```
+Method - GET
+```
+```
+API End Point - /organizations/{orgId}/departments/{depId}/services/{serviceName}/service-sla
+Request - Path variable {orgId} , Path variable {depId} , Path variable {serviceName}
+Response - List<ObjectNode>
+```
 
+	1. Request passed to spring boot request controller 
+	2. Controller forward request to serivce class
+	3. Service class calls JPA repository 
+	4. There is method defines in the serive class - public List<ObjectNode> getOrganizationDepartmentServiceSlaMicroServices(@Param("orgId") Long orgId, @Param("depId") Long depId,@Param("serviceName") String serviceName);
+        4.1 This getOrganizationDepartmentServiceSlaMicroServices method accepts long type organization id and long type department id and pass it to the native sql
+		4.2 Native sql returns the list of  service-cost of an department an serviceName an Organization (List<ObjectNode>) of the given organization id and department id and service-name
+	5. JPA repository returns this list of  service-cost of an department an serviceName  Organization to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
+
+<hr>
+
+### `2.14.organization and department wise service-cureent-sla`
+```
+Method - GET
+```
+```
+API End Point - /organizations/{orgId}/departments/{depId}/services/{serviceName}/service/cureent-sla
+Request - Path variable {orgId} , Path variable {depId} , Path variable {serviceName}
+Response - List<ObjectNode>
+```
+
+	1. Request passed to spring boot request controller 
+	2. Controller forward request to serivce class
+	3. Service class calls JPA repository 
+	4. There is method defines in the serive class - public List<ObjectNode> getOrganizationDepartmentServiceCureentSlaMicroServices(@Param("orgId") Long orgId, @Param("depId") Long depId,@Param("serviceName") String serviceName);
+        4.1 This getOrganizationDepartmentServiceCureentSlaMicroServices method accepts long type organization id and long type department id and pass it to the native sql
+		4.2 Native sql returns the list of  service-cureent-sla of an department an serviceName an Organization (List<ObjectNode>) of the given organization id and department id and service-name
+	5. JPA repository returns this list of  service-cureent-sla of an department an serviceName  Organization to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
+
+<hr>
+
+### `2.15.organization and department wise service-weekly-sla`
+```
+Method - GET
+```
+```
+API End Point - /organizations/{orgId}/departments/{depId}/services/{serviceName}/service/weekly-sla 
+Request - Path variable {orgId} , Path variable {depId} , Path variable {serviceName}
+Response - List<ObjectNode>
+```
+
+	1. Request passed to spring boot request controller 
+	2. Controller forward request to serivce class
+	3. Service class calls JPA repository 
+	4. There is method defines in the serive class - public List<ObjectNode> getOrganizationDepartmentServiceWeeklySlaMicroServices(@Param("orgId") Long orgId, @Param("depId") Long depId,@Param("serviceName") String serviceName);
+        4.1 This getOrganizationDepartmentServiceWeeklySlaMicroServices method accepts long type organization id and long type department id and pass it to the native sql
+		4.2 Native sql returns the list of  service-weekly-sla of an department an serviceName an Organization (List<ObjectNode>) of the given organization id and department id and service-name
+	5. JPA repository returns this list of  service-weekly-sla of an department an serviceName  Organization to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
+
+<hr>
+
+### `2.15.organization and department wise service-monthly-sla`
+```
+Method - GET
+```
+```
+API End Point - /organizations/{orgId}/departments/{depId}/services/{serviceName}/service/monthly-sla
+Request - Path variable {orgId} , Path variable {depId} , Path variable {serviceName}
+Response - List<ObjectNode>
+```
+
+	1. Request passed to spring boot request controller 
+	2. Controller forward request to serivce class
+	3. Service class calls JPA repository 
+	4. There is method defines in the serive class - public List<ObjectNode> getOrganizationDepartmentServiceMonthlySlaMicroServices(@Param("orgId") Long orgId, @Param("depId") Long depId,@Param("serviceName") String serviceName);
+        4.1 This getOrganizationDepartmentServiceMonthlySlaMicroServices method accepts long type organization id and long type department id and pass it to the native sql
+		4.2 Native sql returns the list of  service-monthly-sla of an department an serviceName an Organization (List<ObjectNode>) of the given organization id and department id and service-name
+	5. JPA repository returns this list of  service-monthly-sla of an department an serviceName  Organization to service class and service class returns the same list to contorller and finally controller wraps the list into the ResponseEntity and return it to client
+
+<hr>
 
 ### `3.organization and cloud wise landing Zones `
 ```

@@ -13,7 +13,7 @@
 |Deployment Environment | [URL](https://github.com/AppkubeCloud/appkube-architectures/blob/main/md-files/cmd-curd-apis.md#deployment-environment) |
 |Catalogue | [URL](https://github.com/AppkubeCloud/appkube-architectures/blob/main/md-files/cmd-curd-apis.md#catalogue) |
 
-### ## Query API End Points
+### Query API End Points
 #### **1. organization wise**
 
 | description | method | end point | Request | Response | 
@@ -35,6 +35,10 @@
 |services service-monthly-cost |GET | /organizations/{orgId}/services/{serviceName}/service-cost/monthly | | |
 |services service-landing-zone-services-name |GET | /organizations/{orgId}/landing-zone/{landingZone}/services | | |
 |services service-landing-zone-products |GET | /organizations/{orgId}/landing-zone/{landingZone}/products | | |
+|services service-sla |GET | /organizations/{orgId}/services/{name}/service-sla | | |
+|services service-cureent-sla |GET | /organizations/{orgId}/services/{serviceName}/service/cureent-sla | | |
+|services service-weekly-sla |GET | /organizations/{orgId}/services/{serviceName}/service/weekly-sla | | |
+|services service-monthly-sla |GET | /organizations/{orgId}/services/{serviceName}/service/monthly-sla | | |
 #### **2. organization and department wise**
 | description | method | end point | Request | Response | 
 |:---|:---|:---|:---|:---|
@@ -52,3 +56,7 @@
 |services service-monthly-cost |GET | /organizations/{orgId}/departments/{depId}/services/{serviceName}/service-cost/monthly | | |
 |services service-landing-zone-services-name |GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/services | | |
 |services service-landing-zone-products |GET | /organizations/{orgId}/departments/{depId}/landing-zone/{landingZone}/products | | |
+|services service-sla |GET | /organizations/{orgId}/departments/{depId}/services/{name}/service-sla | | |
+|services service-cureent-sla |GET | /organizations/{orgId}/departments/{depId}/services/{serviceName}/service/cureent-sla | | |
+|services service-weekly-sla |GET | /organizations/{orgId}/departments/{depId}/services/{serviceName}/service/weekly-sla | | |
+|services service-monthly-sla |GET | /organizations/{orgId}/departments/{depId}/services/{serviceName}/service/monthly-sla | | |

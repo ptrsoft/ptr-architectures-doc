@@ -1511,6 +1511,98 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "micro service sla",
+							"item": [
+								{
+									"name": "organization_serviceName_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/services/Admission/service-sla",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"services",
+												"Admission",
+												"service-sla"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_serviceName_current_micro_services",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/services/Admission/service/cureent-sla",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"services",
+												"Admission",
+												"service",
+												"cureent-sla"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_serviceName_weekly_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/services/Admission/service/weekly-sla",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"services",
+												"Admission",
+												"service",
+												"weekly-sla"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_serviceName_monthly_microServices Copy",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/services/Admission/service/monthly-sla",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"services",
+												"Admission",
+												"service",
+												"monthly-sla"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				},
@@ -1854,6 +1946,106 @@
 												"Admission",
 												"service-cost",
 												"monthly"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "micro service sla",
+							"item": [
+								{
+									"name": "organization_departments_serviceName_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/2/services/Admission/service-sla",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"2",
+												"services",
+												"Admission",
+												"service-sla"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_serviceName_cureent_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/2/services/Admission/service/cureent-sla",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"2",
+												"services",
+												"Admission",
+												"service",
+												"cureent-sla"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_serviceName_monthly_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/2/services/Admission/service/monthly-sla",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"2",
+												"services",
+												"Admission",
+												"service",
+												"monthly-sla"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "organization_departments_serviceName_weekly_microServices",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseAssetUrl}}/organizations/1/departments/2/services/Admission/service/weekly-sla",
+											"host": [
+												"{{baseAssetUrl}}"
+											],
+											"path": [
+												"organizations",
+												"1",
+												"departments",
+												"2",
+												"services",
+												"Admission",
+												"service",
+												"weekly-sla"
 											]
 										}
 									},
@@ -2219,7 +2411,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Admission\",\r\n    \"departmentName\": \"product\",\r\n    \"product\": \"Balancer\",\r\n    \"environment\": \"PROUD\",\r\n    \"serviceType\": \"BUSINESS\",\r\n    \"department\": {\r\n        \"id\": 2\r\n    },\r\n    \"deploymentEnvironment\": {\r\n        \"id\": 2\r\n    },\r\n    \"serviceTopology\": {\r\n        \"ApiGateway\": {\r\n            \"name\": \"Admission Api Gw\",\r\n            \"elementType\": \"AWS Api GW\",\r\n            \"CloudElementId\": \"1\"\r\n        },\r\n        \"Balancer\": {\r\n            \"name\": \"Admission Service LB\",\r\n            \"elementType\": \"AWS NLB\",\r\n            \"CloudElementId\": \"2\"\r\n        },\r\n        \"App\": {\r\n            \"name\": \"Admission Go Api Server\",\r\n            \"elementType\": \"AWS EKS\",\r\n            \"CloudElementId\": \"3\",\r\n            \"UsesDataServices\": [\r\n                {\r\n                    \"name\": \"Admission Cache DB\",\r\n                    \"elementType\": \"AWS Redis Cache\",\r\n                    \"CloudElementId\": \"4\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission RDS Postgresql DB\",\r\n                    \"elementType\": \"AWS RDS\",\r\n                    \"CloudElementId\": \"5\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission Search DB\",\r\n                    \"elementType\": \"AWS Opensearch\",\r\n                    \"CloudElementId\": \"1243\"\r\n                }\r\n            ],\r\n            \"DependOnOtherServices\": [\r\n                {\r\n                    \"serviceName\": \"Fees\",\r\n                    \"serviceId\": \"12334\",\r\n                    \"Api's\": []\r\n                }\r\n            ]\r\n        }\r\n    },\r\n   \"costJson\":{\r\n    \"DAILYCOST\": {\r\n      \"Day1\": \"99\",\r\n      \"Day2\": \"100\",\r\n      \"Day3\": \"99\",\r\n      \"Day4\": \"100\",\r\n      \"Day5\": \"99\",\r\n      \"Day6\": \"100\",\r\n      \"Day7\": \"100\"\r\n    },\r\n    \"WEEKLYCOST\": {\r\n      \"Week1\": \"99\",\r\n      \"Week2\": \"100\",\r\n      \"Week3\": \"99\",\r\n      \"Week4\": \"100\"\r\n    },\r\n    \"MONTHLYCOST\": {\r\n      \"Month1\": \"99\",\r\n      \"Month2\": \"100\",\r\n      \"Month3\": \"99\",\r\n      \"Month4\": \"100\"\r\n    }\r\n  \r\n    }\r\n}",
+							"raw": "{\r\n    \"name\": \"Admission Cache DB\",\r\n    \"departmentName\": \"product Api\",\r\n    \"product\": \"Balancer AWS\",\r\n    \"environment\": \"APP\",\r\n    \"serviceType\": \"BUSINESS\",\r\n    \"department\": {\r\n        \"id\": 1\r\n    },\r\n    \"deploymentEnvironment\": {\r\n        \"id\": 1\r\n    },\r\n    \"serviceTopology\": {\r\n        \"ApiGateway\": {\r\n            \"name\": \"Admission Api Gw\",\r\n            \"elementType\": \"AWS Api GW\",\r\n            \"CloudElementId\": \"1\"\r\n        },\r\n        \"Balancer\": {\r\n            \"name\": \"Admission Service LB\",\r\n            \"elementType\": \"AWS NLB\",\r\n            \"CloudElementId\": \"2\"\r\n        },\r\n        \"App\": {\r\n            \"name\": \"Admission Go Api Server\",\r\n            \"elementType\": \"AWS EKS\",\r\n            \"CloudElementId\": \"3\",\r\n            \"UsesDataServices\": [\r\n                {\r\n                    \"name\": \"Admission Cache DB\",\r\n                    \"elementType\": \"AWS Redis Cache\",\r\n                    \"CloudElementId\": \"4\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission RDS Postgresql DB\",\r\n                    \"elementType\": \"AWS RDS\",\r\n                    \"CloudElementId\": \"5\"\r\n                },\r\n                {\r\n                    \"name\": \"Admission Search DB\",\r\n                    \"elementType\": \"AWS Opensearch\",\r\n                    \"CloudElementId\": \"1243\"\r\n                }\r\n            ],\r\n            \"DependOnOtherServices\": [\r\n                {\r\n                    \"serviceName\": \"Fees\",\r\n                    \"serviceId\": \"12334\",\r\n                    \"Api's\": []\r\n                }\r\n            ]\r\n        }\r\n    },\r\n    \"costJson\": {\r\n        \"DAILYCOST\": {\r\n            \"Day1\": \"99\",\r\n            \"Day2\": \"100\",\r\n            \"Day3\": \"99\",\r\n            \"Day4\": \"100\",\r\n            \"Day5\": \"99\",\r\n            \"Day6\": \"100\",\r\n            \"Day7\": \"100\"\r\n        },\r\n        \"WEEKLYCOST\": {\r\n            \"Week1\": \"99\",\r\n            \"Week2\": \"100\",\r\n            \"Week3\": \"99\",\r\n            \"Week4\": \"100\"\r\n        },\r\n        \"MONTHLYCOST\": {\r\n            \"Month1\": \"99\",\r\n            \"Month2\": \"100\",\r\n            \"Month3\": \"99\",\r\n            \"Month4\": \"100\"\r\n        }\r\n    },\r\n    \"slaJson\": {\r\n        \"CURRENTSLA\": {\r\n            \"performance\": \"99\",\r\n            \"availability\": \"100\",\r\n            \"reliability\": \"99\",\r\n            \"security\": \"78\",\r\n            \"endusage\": \"99.9\",\r\n            \"dataprotection\": \"99\"\r\n        },\r\n        \"WEEKLYSLA\": {\r\n            \"performance\": \"99\",\r\n            \"availability\": \"99.99\",\r\n            \"reliability\": \"99\",\r\n            \"security\": \"78\",\r\n            \"endusage\": \"99.9\",\r\n            \"dataprotection\": \"99\"\r\n        },\r\n        \"MONTHLYSLA\": {\r\n            \"performance\": \"99\",\r\n            \"availability\": \"100\",\r\n            \"reliability\": \"98\",\r\n            \"security\": \"78\",\r\n            \"endusage\": \"99.9\",\r\n            \"dataprotection\": \"99\"\r\n        }\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
