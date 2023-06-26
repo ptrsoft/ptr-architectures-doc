@@ -1,0 +1,286 @@
+{
+    "ProductEnclaves": [
+        {
+            "name": "vpc1",
+            "id": "vpc-05b49e2c5ebe72f5f",
+            "state": "available",
+            "clusters": {
+                "eks": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                },
+                "ecs": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                }
+            },
+            "cloudmanaged": {
+                "app": {
+                    "lambda": {
+                        "stats": {},
+                        "metaData": {},
+                        "elementLists": [
+                            {
+                                "name": "mycluster",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                            },
+                            {
+                                "name": "mycluster1",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                            }
+                        ]
+                    },
+                    "ec2": {
+                        "stats": {},
+                        "metaData": {},
+                        "elementLists": [
+                            {
+                                "name": "mycluster",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                            },
+                            {
+                                "name": "mycluster1",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                            }
+                        ]
+                    }
+                },
+                "data": {
+                    "dynamo": {
+                        "stats": {},
+                        "metaData": {},
+                        "elementLists": [
+                            {
+                                "name": "mycluster",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                            },
+                            {
+                                "name": "mycluster1",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                            }
+                        ]
+                    },
+                    "documentDB": {
+                        "stats": {},
+                        "metaData": {},
+                        "elementLists": [
+                            {
+                                "name": "mycluster",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                            },
+                            {
+                                "name": "mycluster1",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                            }
+                        ]
+                    }
+                }
+            },
+            "gateways": {
+                "waf": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                },
+                "apigw": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                },
+                "LBS": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "vpc2",
+            "id": "vpc-05b49e2c5ebe72e979",
+            "state": "available",
+            "clusters": {
+                "eks": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                },
+                "ecs": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                }
+            },
+            "cloudmanaged": {
+                "app": {
+                    "lambda": {
+                        "stats": {},
+                        "metaData": {},
+                        "elementLists": [
+                            {
+                                "name": "mycluster",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                            },
+                            {
+                                "name": "mycluster1",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                            }
+                        ]
+                    },
+                    "ec2": {
+                        "stats": {},
+                        "metaData": {},
+                        "elementLists": [
+                            {
+                                "name": "mycluster",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                            },
+                            {
+                                "name": "mycluster1",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                            }
+                        ]
+                    }
+                },
+                "data": {
+                    "dynamo": {
+                        "stats": {},
+                        "metaData": {},
+                        "elementLists": [
+                            {
+                                "name": "mycluster",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                            },
+                            {
+                                "name": "mycluster1",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                            }
+                        ]
+                    },
+                    "documentDB": {
+                        "stats": {},
+                        "metaData": {},
+                        "elementLists": [
+                            {
+                                "name": "mycluster",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                            },
+                            {
+                                "name": "mycluster1",
+                                "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                            }
+                        ]
+                    }
+                }
+            },
+            "gateways": {
+                "waf": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                },
+                "apigw": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                },
+                "LBS": {
+                    "stats": {},
+                    "metaData": {},
+                    "elementLists": [
+                        {
+                            "name": "mycluster",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT"
+                        },
+                        {
+                            "name": "mycluster1",
+                            "arn": "arn:aws:eks:us-east-1:657907747545:cluster/myclustTT11"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
