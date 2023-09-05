@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "5072c42e-124c-47be-b2bf-2e47a7db0ea1",
+		"_postman_id": "5aff4b9d-1815-401b-944e-440a27df955c",
 		"name": "security_latest",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "11946453"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -11,21 +10,19 @@
 			"item": [
 				{
 					"name": "listAll",
+					"protocolProfileBehavior": {
+						"strictSSL": false,
+						"followRedirects": false
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://34.199.12.114:8094/security/users/listAll",
-							"protocol": "http",
+							"raw": "{{base}}/users/listAll",
 							"host": [
-								"34",
-								"199",
-								"12",
-								"114"
+								"{{base}}"
 							],
-							"port": "8094",
 							"path": [
-								"security",
 								"users",
 								"listAll"
 							]
@@ -39,8 +36,29 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"test@gmail.com\",\r\n    \"password\": \"test\",\r\n    \"active\": true,\r\n    \"email\": \"test@gmail.com\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 7,\r\n            \"createdAt\": null,\r\n            \"updatedAt\": null,\r\n            \"createdBy\": null,\r\n            \"updatedBy\": null,\r\n            \"name\": \"Admin_Role_Group\",\r\n            \"version\": 1,\r\n            \"grp\": true,\r\n            \"description\": \"Admin role group\",\r\n            \"permissions\": [],\r\n            \"roles\": [\r\n                {\r\n                    \"id\": 82,\r\n                    \"createdAt\": null,\r\n                    \"updatedAt\": null,\r\n                    \"createdBy\": null,\r\n                    \"updatedBy\": null,\r\n                    \"name\": \"Team Menu\",\r\n                    \"version\": 1,\r\n                    \"grp\": false,\r\n                    \"description\": \"Team menu access role\",\r\n                    \"permissions\": [\r\n                        {\r\n                            \"id\": 1,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Team\",\r\n                            \"permission\": \"Team\",\r\n                            \"description\": \"Team menu\"\r\n                        }\r\n                    ],\r\n                    \"roles\": []\r\n                },\r\n                {\r\n                    \"id\": 6,\r\n                    \"createdAt\": null,\r\n                    \"updatedAt\": null,\r\n                    \"createdBy\": null,\r\n                    \"updatedBy\": null,\r\n                    \"name\": \"Admin\",\r\n                    \"version\": 1,\r\n                    \"grp\": false,\r\n                    \"description\": \"Admin\",\r\n                    \"permissions\": [\r\n                        {\r\n                            \"id\": 1,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Team\",\r\n                            \"permission\": \"Team\",\r\n                            \"description\": \"Team menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 8,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Overview\",\r\n                            \"permission\": \"Overview\",\r\n                            \"description\": \"Overview menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 38,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Overview\",\r\n                            \"permission\": \"Overview\",\r\n                            \"description\": \"Overview sub menu of Logs menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 44,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Overview\",\r\n                            \"permission\": \"Overview\",\r\n                            \"description\": \"Overview sub menu of Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 9,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Assets\",\r\n                            \"permission\": \"Assets\",\r\n                            \"description\": \"Assets menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 10,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Environments\",\r\n                            \"permission\": \"Environments\",\r\n                            \"description\": \"Environments sub menu of Assets\"\r\n                        },\r\n                        {\r\n                            \"id\": 11,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Discovered Assets\",\r\n                            \"permission\": \"Discovered Assets\",\r\n                            \"description\": \"Discovered assets sub menu of Assets\"\r\n                        },\r\n                        {\r\n                            \"id\": 12,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Monitored Assets\",\r\n                            \"permission\": \"Monitored Assets\",\r\n                            \"description\": \"Monitored assets sub menu of Assets\"\r\n                        },\r\n                        {\r\n                            \"id\": 13,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Org Unit\",\r\n                            \"permission\": \"Org Unit\",\r\n                            \"description\": \"Org unit sub menu of Assets\"\r\n                        },\r\n                        {\r\n                            \"id\": 14,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Custom-Resources\",\r\n                            \"permission\": \"Custom-Resources\",\r\n                            \"description\": \"Custom-Resources sub menu of Assets\"\r\n                        },\r\n                        {\r\n                            \"id\": 15,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"App Catalogue\",\r\n                            \"permission\": \"App Catalogue\",\r\n                            \"description\": \"App Catalogue menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 16,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"View And Search Catalogue\",\r\n                            \"permission\": \"View And Search Catalogue\",\r\n                            \"description\": \"View And Search Catalogue sub menu of App Catalogue menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 17,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Library\",\r\n                            \"permission\": \"Library\",\r\n                            \"description\": \"Library sub menu of App Catalogue menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 18,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Import Assets From Module Pack\",\r\n                            \"permission\": \"Import Assets From Module Pack\",\r\n                            \"description\": \"Import Assets From Module Pack sub menu of App Catalogue menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 19,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Create Or Import Module Packs\",\r\n                            \"permission\": \"Create Or Import Module Packs\",\r\n                            \"description\": \"Create Or Import Module Packs sub menu of App Catalogue menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 20,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Events\",\r\n                            \"permission\": \"Events\",\r\n                            \"description\": \"Events menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 21,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Dashboard\",\r\n                            \"permission\": \"Dashboard\",\r\n                            \"description\": \"Dashboard sub menu of Events menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 31,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Dashboard\",\r\n                            \"permission\": \"Dashboard\",\r\n                            \"description\": \"Dashboard sub menu of Performance & Availability menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 39,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Dashboard\",\r\n                            \"permission\": \"Dashboard\",\r\n                            \"description\": \"Dashboard sub menu of Logs menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 54,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Dashboard\",\r\n                            \"permission\": \"Dashboard\",\r\n                            \"description\": \"Dashboard sub menu of Service desk menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 22,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"New Alert Rule\",\r\n                            \"permission\": \"New Alert Rule\",\r\n                            \"description\": \"New Alert Rule sub menu of Events menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 23,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"All Alert Rules\",\r\n                            \"permission\": \"All Alert Rules\",\r\n                            \"description\": \"All Alerts Rule sub menu of Events menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 24,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Manage Alert Rule\",\r\n                            \"permission\": \"Manage Alert Rule\",\r\n                            \"description\": \"Manage Alert Rule sub menu of Events menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 25,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Manage Workflows\",\r\n                            \"permission\": \"Manage Workflows\",\r\n                            \"description\": \"Manage Workflows sub menu of Events menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 26,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Analytics\",\r\n                            \"permission\": \"Analytics\",\r\n                            \"description\": \"Analytics menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 27,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Manage Dashboards\",\r\n                            \"permission\": \"Manage Dashboards\",\r\n                            \"description\": \"Manage Dashboards sub menu of Analytics menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 28,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Manage Views\",\r\n                            \"permission\": \"Manage Views\",\r\n                            \"description\": \"Manage Views sub menu of Analytics menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 29,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Task Manager\",\r\n                            \"permission\": \"Task Manager\",\r\n                            \"description\": \"Task Manager sub menu of Analytics menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 30,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Performance & Availability\",\r\n                            \"permission\": \"Performance & Availability\",\r\n                            \"description\": \"Performance & Availability menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 32,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Collection\",\r\n                            \"permission\": \"Collection\",\r\n                            \"description\": \"Collection sub menu of Performance & Availability menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 33,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Rule\",\r\n                            \"permission\": \"Rule\",\r\n                            \"description\": \"Rule sub menu of Performance & Availability menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 34,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Preferences\",\r\n                            \"permission\": \"Preferences\",\r\n                            \"description\": \"Preferences sub menu of Performance & Availability menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 41,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Preferences\",\r\n                            \"permission\": \"Preferences\",\r\n                            \"description\": \"Preferences sub menu of Logs menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 58,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Preferences\",\r\n                            \"permission\": \"Preferences\",\r\n                            \"description\": \"Preferences sub menu of Service desk menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 35,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Discovery\",\r\n                            \"permission\": \"Discovery\",\r\n                            \"description\": \"Discovery sub menu of Performance & Availability menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 36,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"View\",\r\n                            \"permission\": \"View\",\r\n                            \"description\": \"View sub menu of Performance & Availability menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 37,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Logs\",\r\n                            \"permission\": \"Logs\",\r\n                            \"description\": \"Logs menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 40,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Alerts\",\r\n                            \"permission\": \"Alerts\",\r\n                            \"description\": \"Alerts sub menu of Logs menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 42,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Preference\",\r\n                            \"permission\": \"Preference\",\r\n                            \"description\": \"Preference sub menu of Logs menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 52,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Preference\",\r\n                            \"permission\": \"Preference\",\r\n                            \"description\": \"Preference sub menu of Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 71,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Preference\",\r\n                            \"permission\": \"Preference\",\r\n                            \"description\": \"Preference menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 43,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Compliance\",\r\n                            \"permission\": \"Compliance\",\r\n                            \"description\": \"Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 45,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Rulesets\",\r\n                            \"permission\": \"Rulesets\",\r\n                            \"description\": \"Rulesets sub menu of Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 46,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Rule Builder\",\r\n                            \"permission\": \"Rule Builder\",\r\n                            \"description\": \"Rule Builder sub menu of Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 47,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Audits\",\r\n                            \"permission\": \"Audits\",\r\n                            \"description\": \"Audits sub menu of Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 48,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Policies\",\r\n                            \"permission\": \"Policies\",\r\n                            \"description\": \"Policies sub menu of Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 49,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Remediation\",\r\n                            \"permission\": \"Remediation\",\r\n                            \"description\": \"Remediation sub menu of Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 50,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Assessment History\",\r\n                            \"permission\": \"Assessment History\",\r\n                            \"description\": \"Assessment History sub menu of Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 51,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Exclusions\",\r\n                            \"permission\": \"Exclusions\",\r\n                            \"description\": \"Exclusions sub menu of Compliance menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 53,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Service desk\",\r\n                            \"permission\": \"Service desk\",\r\n                            \"description\": \"Service desk menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 55,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Contacts\",\r\n                            \"permission\": \"Contacts\",\r\n                            \"description\": \"Contacts sub menu of Service desk menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 56,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Companies\",\r\n                            \"permission\": \"Companies\",\r\n                            \"description\": \"Companies sub menu of Service desk menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 57,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Reports\",\r\n                            \"permission\": \"Reports\",\r\n                            \"description\": \"Reports sub menu of Service desk menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 59,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Automation\",\r\n                            \"permission\": \"Automation\",\r\n                            \"description\": \"Automation menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 60,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Generators\",\r\n                            \"permission\": \"Generators\",\r\n                            \"description\": \"Generators menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 61,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Delivery\",\r\n                            \"permission\": \"Delivery\",\r\n                            \"description\": \"Delivery menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 62,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Quality\",\r\n                            \"permission\": \"Quality\",\r\n                            \"description\": \"Quality menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 63,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Test\",\r\n                            \"permission\": \"Test\",\r\n                            \"description\": \"Test menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 64,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Change Manager\",\r\n                            \"permission\": \"Change Manager\",\r\n                            \"description\": \"Change Manager menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 65,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Explorer\",\r\n                            \"permission\": \"Explorer\",\r\n                            \"description\": \"Explorer menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 66,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"RCA\",\r\n                            \"permission\": \"RCA\",\r\n                            \"description\": \"RCA menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 67,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Search & Act\",\r\n                            \"permission\": \"Search & Act\",\r\n                            \"description\": \"Search & Act menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 68,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Script Manager\",\r\n                            \"permission\": \"Script Manager\",\r\n                            \"description\": \"Script Manager menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 69,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Optimizer\",\r\n                            \"permission\": \"Optimizer\",\r\n                            \"description\": \"Optimizer menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 70,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Migration Manager\",\r\n                            \"permission\": \"Migration Manager\",\r\n                            \"description\": \"Migration Manager menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 72,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"RBAC Settings\",\r\n                            \"permission\": \"RBAC Settings\",\r\n                            \"description\": \"RBAC Settings menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 73,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Permissions\",\r\n                            \"permission\": \"Permissions\",\r\n                            \"description\": \"Permissions sub menu of RBAC Settings menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 74,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Roles\",\r\n                            \"permission\": \"Roles\",\r\n                            \"description\": \"Roles sub menu of RBAC Settings menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 75,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Groups\",\r\n                            \"permission\": \"Groups\",\r\n                            \"description\": \"Groups sub menu of RBAC Settings menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 76,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Users\",\r\n                            \"permission\": \"Users\",\r\n                            \"description\": \"Users sub menu of RBAC Settings menu\"\r\n                        },\r\n                        {\r\n                            \"id\": 77,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Resource\",\r\n                            \"permission\": \"Resource\",\r\n                            \"description\": \"Resource menu\"\r\n                        }\r\n                    ],\r\n                    \"roles\": []\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": 83,\r\n            \"createdAt\": null,\r\n            \"updatedAt\": null,\r\n            \"createdBy\": null,\r\n            \"updatedBy\": null,\r\n            \"name\": \"Team Menu Role\",\r\n            \"version\": 1,\r\n            \"grp\": true,\r\n            \"description\": \"Team Access Role\",\r\n            \"permissions\": [],\r\n            \"roles\": [\r\n                {\r\n                    \"id\": 82,\r\n                    \"createdAt\": null,\r\n                    \"updatedAt\": null,\r\n                    \"createdBy\": null,\r\n                    \"updatedBy\": null,\r\n                    \"name\": \"Team Menu\",\r\n                    \"version\": 1,\r\n                    \"grp\": false,\r\n                    \"description\": \"Team menu access role\",\r\n                    \"permissions\": [\r\n                        {\r\n                            \"id\": 1,\r\n                            \"createdAt\": null,\r\n                            \"updatedAt\": null,\r\n                            \"createdBy\": null,\r\n                            \"updatedBy\": null,\r\n                            \"version\": 1,\r\n                            \"name\": \"Team\",\r\n                            \"permission\": \"Team\",\r\n                            \"description\": \"Team menu\"\r\n                        }\r\n                    ],\r\n                    \"roles\": []\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"organization\": \"Synectiks\",\r\n    \"owner\": null,\r\n    \"googleMfaKey\": null,\r\n    \"isMfaEnable\": \"NO\",\r\n    \"mfaQrImageFilePath\": null,\r\n    \"inviteStatus\": null,\r\n    \"inviteLink\": null,\r\n    \"inviteCode\": null,\r\n    \"inviteSentOn\": null,\r\n    \"tempPassword\": null,\r\n    \"mfaQrCode\": null,\r\n    \"pendingInviteList\": null,\r\n    \"teamList\": null,\r\n    \"isAuthenticatedByUserName\": false,\r\n    \"authenticatedByUserName\": false\r\n}",
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "ss_test",
+									"type": "default"
+								},
+								{
+									"key": "organization",
+									"value": "SYNECTIKS",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "ss_test",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "ss_test@yy.com",
+									"type": "default"
+								}
+							],
 							"options": {
 								"raw": {
 									"language": "json"
@@ -48,17 +66,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.199.12.114:8094/security/users/create",
-							"protocol": "http",
+							"raw": "{{baseSecurityUrl}}/users/create",
 							"host": [
-								"34",
-								"199",
-								"12",
-								"114"
+								"{{baseSecurityUrl}}"
 							],
-							"port": "8094",
 							"path": [
-								"security",
 								"users",
 								"create"
 							]
@@ -308,6 +320,57 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/forgot-password?userName=ABCD",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"forgot-password"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "ABCD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"ABCD\",\r\n    \"token\":\"AoobjV\",\r\n    \"oldPassword\":\"password\",\r\n    \"newPassword\":\"abcd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/reset-password",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -320,9 +383,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/permissions/listAll",
+							"raw": "{{base}}/permissions/listAll",
 							"host": [
-								"{{baseSecurityUrl}}"
+								"{{base}}"
 							],
 							"path": [
 								"permissions",
@@ -500,7 +563,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/public/login?username=test&password=password",
+							"raw": "{{baseSecurityUrl}}/public/login?username=home_test&password=home_test",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
@@ -511,11 +574,11 @@
 							"query": [
 								{
 									"key": "username",
-									"value": "test"
+									"value": "home_test"
 								},
 								{
 									"key": "password",
-									"value": "password"
+									"value": "home_test"
 								}
 							]
 						}
@@ -633,13 +696,19 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/public/logout",
+							"raw": "{{baseSecurityUrl}}/public/logout?userName=home_test",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
 							"path": [
 								"public",
 								"logout"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "home_test"
+								}
 							]
 						}
 					},
@@ -676,6 +745,33 @@
 							"path": [
 								"public",
 								"authenticateGoogleMfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticateSession",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"home_test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/public/authenticateSession",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"public",
+								"authenticateSession"
 							]
 						}
 					},
@@ -1303,6 +1399,110 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "mfa",
+			"item": [
+				{
+					"name": "getMfa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"home_test\",\r\n    \"password\":\"home_test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://40fglalyd0.execute-api.us-east-1.amazonaws.com/dev/users/mfaCode",
+							"protocol": "https",
+							"host": [
+								"40fglalyd0",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"users",
+								"mfaCode"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "home_test",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "home_test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate mfa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"home_test\",\r\n    \"token\":\"115151\",\r\n    \"mfaKey\":\"####################\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/authenticate-mfa",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"authenticate-mfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "disable mfa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"home_test\",\r\n    \"token\":\"739674\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/disable-mfa",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"disable-mfa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -1328,7 +1528,7 @@
 	"variable": [
 		{
 			"key": "baseSecurityUrl",
-			"value": "http://localhost:8094/security"
+			"value": "http://34.199.12.114:8094/security"
 		}
 	]
 }
