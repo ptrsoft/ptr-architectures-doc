@@ -327,11 +327,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/users/forgot-password?userName=ABCD",
+							"raw": "https://40fglalyd0.execute-api.us-east-1.amazonaws.com/dev/users/forgot-password?userName=ABCD",
+							"protocol": "https",
 							"host": [
-								"{{baseSecurityUrl}}"
+								"40fglalyd0",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
 							],
 							"path": [
+								"dev",
 								"users",
 								"forgot-password"
 							],
@@ -352,7 +358,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userName\":\"ABCD\",\r\n    \"token\":\"AoobjV\",\r\n    \"oldPassword\":\"password\",\r\n    \"newPassword\":\"abcd\"\r\n}",
+							"raw": "{\r\n    \"userName\":\"ABCD\",\r\n    \"token\":\"nsWAwb\",\r\n    \"newPassword\":\"abcd1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -515,14 +521,38 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/organization/getOrganization/78",
+							"raw": "{{baseSecurityUrl}}/organization/id/78",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
 							"path": [
 								"organization",
-								"getOrganization",
+								"id",
 								"78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByUserName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/getOrganizationByUserName?userName=qwert",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"getOrganizationByUserName"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "qwert"
+								}
 							]
 						}
 					},
@@ -534,19 +564,75 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/organization/getOrganizationByUserName?userName=admin.test@synectiks.com",
+							"raw": "{{baseSecurityUrl}}/organization/name/",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
 							"path": [
 								"organization",
-								"getOrganizationByUserName"
+								"name",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"test_qwer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/add?pushToCmdb=false",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"add"
 							],
 							"query": [
 								{
-									"key": "userName",
-									"value": "admin.test@synectiks.com"
+									"key": "pushToCmdb",
+									"value": "false"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pushToCMDB",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"test_qwer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/push-to-cmdb/wwwww",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"push-to-cmdb",
+								"wwwww"
 							]
 						}
 					},
@@ -1528,7 +1614,7 @@
 	"variable": [
 		{
 			"key": "baseSecurityUrl",
-			"value": "http://34.199.12.114:8094/security"
+			"value": "http://localhost:8094/security"
 		}
 	]
 }
