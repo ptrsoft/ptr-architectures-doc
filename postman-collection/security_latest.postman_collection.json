@@ -40,12 +40,12 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "ss_test",
+									"value": "asdf_",
 									"type": "default"
 								},
 								{
 									"key": "organization",
-									"value": "SYNECTIKS",
+									"value": "BJ_ASDF",
 									"type": "default"
 								},
 								{
@@ -79,18 +79,57 @@
 					"response": []
 				},
 				{
-					"name": "findById",
+					"name": "newOrgUser",
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "organization",
+									"value": "BJ_ASDF",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "ss_test@yy.com",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseSecurityUrl}}/users/10",
+							"raw": "{{baseSecurityUrl}}/users/create/new-org-user",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
 							"path": [
 								"users",
-								"10"
+								"create",
+								"new-org-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/79",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"79"
 							]
 						}
 					},
@@ -564,14 +603,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/organization/name/",
+							"raw": "{{baseSecurityUrl}}/organization/name/TEST_ORGq",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
 							"path": [
 								"organization",
 								"name",
-								""
+								"TEST_ORGq"
 							]
 						}
 					},
@@ -584,7 +623,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\":\"test_qwer\"\r\n}",
+							"raw": "{\r\n   \"name\":\"wwwww\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
