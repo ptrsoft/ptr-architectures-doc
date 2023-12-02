@@ -969,7 +969,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"version\": 1,\r\n    \"name\": \"Demo_Role_2\",\r\n    \"description\": \"Demo Role 2\",\r\n    \"grp\":false\r\n}",
+							"raw": "{\r\n    \"version\": 1,\r\n    \"name\": \"Test role 3 with policy\",\r\n    \"description\": \"Test role 3 with policy\",\r\n    \"grp\":false,\r\n    \"policies\":[\r\n        {\r\n            \"id\":511\r\n        },\r\n        {\r\n            \"id\":509\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1187,6 +1187,120 @@
 							],
 							"path": [
 								"policy",
+								"delete",
+								"508"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "permission category",
+			"item": [
+				{
+					"name": "listAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/listAll",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
+								"listAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"version\": 1,\r\n    \"name\": \"Demo_permission-category\",\r\n    \"description\": \"Demo permission-category\",\r\n    \"permissions\": [\r\n        {\r\n            \"id\": 109\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/create",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": 509,\r\n\t\"createdBy\": \"POSTMAN\",\r\n\t\"name\": \"test permission-category\",\r\n\t\"version\": 1,\r\n\t\"description\": \"test permission-category update\",\r\n\t\"permissions\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"createdAt\": null,\r\n\t\t\t\"updatedAt\": null,\r\n\t\t\t\"createdBy\": \"pata nhi\",\r\n\t\t\t\"updatedBy\": null,\r\n\t\t\t\"version\": 1,\r\n\t\t\t\"name\": \"Team\",\r\n\t\t\t\"permission\": \"Team\",\r\n\t\t\t\"description\": \"Team menu\"\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/update",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/522",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
+								"522"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/permission-category/delete/508",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"permission-category",
 								"delete",
 								"508"
 							]
