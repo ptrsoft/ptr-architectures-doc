@@ -150,6 +150,26 @@
 									"value": "cmdb",
 									"type": "text",
 									"disabled": true
+								},
+								{
+									"key": "firstName",
+									"value": "mm",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "kyc",
+									"type": "text"
+								},
+								{
+									"key": "errorOnOrgFound",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/manoj/Pictures/Screenshots/Screenshot 2023-11-20 165301.png"
 								}
 							]
 						},
@@ -414,7 +434,35 @@
 								},
 								{
 									"key": "roleId",
-									"value": "60,61"
+									"value": "2059,2060"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUsersToRoleGroup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/addUsersToRoleGroup?roleId=2059&userIds=2107,2063",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"addUsersToRoleGroup"
+							],
+							"query": [
+								{
+									"key": "roleId",
+									"value": "2059"
+								},
+								{
+									"key": "userIds",
+									"value": "2107,2063"
 								}
 							]
 						}
@@ -480,6 +528,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseSecurityUrl}}/users/enableGoogleMfa",
 							"host": [
@@ -494,10 +551,19 @@
 					"response": []
 				},
 				{
-					"name": "disableGoogleMfa",
+					"name": "disableMfa",
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"test-user\",\r\n    \"password\":\"test-user@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{baseSecurityUrl}}/users/disableGoogleMfa",
 							"host": [
@@ -542,7 +608,7 @@
 					"response": []
 				},
 				{
-					"name": "reset-password",
+					"name": "reset-password-by-otp",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -563,6 +629,60 @@
 							"path": [
 								"users",
 								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"ABCD\",\r\n    \"oldPassword\":\"abcd1\",\r\n    \"newPassword\":\"abcd1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/reset-password",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password-by-admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"ABCD\",\r\n    \"newPassword\":\"abcd1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSecurityUrl}}/users/reset-password-by-admin",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"users",
+								"reset-password-by-admin"
 							]
 						}
 					},
@@ -1482,7 +1602,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"116\",\r\n    \"description\": \"Role Group of Default Users\"\r\n}",
+							"raw": "{\r\n    \"id\": \"5874\",\r\n    \"organization\":{},\r\n    \"policies\": [\r\n        {\r\n            \"id\":5819\r\n        },\r\n        {\r\n            \"id\":5930\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
