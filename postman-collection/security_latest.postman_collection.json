@@ -19,15 +19,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.synectiks.net/security/users/listAll",
-							"protocol": "https",
+							"raw": "{{baseSecurityUrl}}/users/listAll",
 							"host": [
-								"api",
-								"synectiks",
-								"net"
+								"{{baseSecurityUrl}}"
 							],
 							"path": [
-								"security",
 								"users",
 								"listAll"
 							]
@@ -45,24 +41,23 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "admin",
+									"value": "siddhesh",
 									"type": "default"
 								},
 								{
 									"key": "organization",
-									"value": "default",
+									"value": "Synectiks",
 									"type": "default"
 								},
 								{
 									"key": "password",
-									"value": "password",
+									"value": "SYnectiks@1234",
 									"type": "default"
 								},
 								{
 									"key": "email",
-									"value": "",
-									"type": "default",
-									"disabled": true
+									"value": "siddhesh.deshmukh@synectiks.com",
+									"type": "default"
 								},
 								{
 									"key": "ownerId",
@@ -72,7 +67,7 @@
 								},
 								{
 									"key": "type",
-									"value": "SUPER ADMIN",
+									"value": "ADMIN",
 									"type": "text"
 								},
 								{
@@ -91,6 +86,11 @@
 									"key": "errorOnOrgFound",
 									"value": "true",
 									"type": "text"
+								},
+								{
+									"key": "orgProfileFile",
+									"type": "file",
+									"src": []
 								}
 							]
 						},
@@ -117,27 +117,27 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "helo-user",
+									"value": "test-user",
 									"type": "default"
 								},
 								{
 									"key": "organization",
-									"value": "HELO-ORG",
+									"value": "Synectiks",
 									"type": "default"
 								},
 								{
 									"key": "password",
-									"value": "helo-user@123",
+									"value": "test-user@123",
 									"type": "default"
 								},
 								{
 									"key": "email",
-									"value": "helo-user@demo.com",
+									"value": "manoj.sharma@synectiks.com",
 									"type": "default"
 								},
 								{
 									"key": "ownerId",
-									"value": "67",
+									"value": "2063",
 									"type": "text"
 								},
 								{
@@ -169,7 +169,8 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/manoj/Pictures/Screenshots/Screenshot 2023-11-20 165301.png"
+									"src": [],
+									"disabled": true
 								}
 							]
 						},
@@ -196,24 +197,27 @@
 							"formdata": [
 								{
 									"key": "organization",
-									"value": "BJ_ASDF",
+									"value": "SYNECTIKS",
 									"type": "default"
 								},
 								{
 									"key": "email",
-									"value": "ss_test@yy.com",
+									"value": "manoj.sharma@synectiks.com",
 									"type": "default"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{baseSecurityUrl}}/users/create/new-org-user",
+							"raw": "https://api.synectiks.net/security/users/new-org-user",
+							"protocol": "https",
 							"host": [
-								"{{baseSecurityUrl}}"
+								"api",
+								"synectiks",
+								"net"
 							],
 							"path": [
+								"security",
 								"users",
-								"create",
 								"new-org-user"
 							]
 						}
@@ -226,13 +230,13 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/users/977",
+							"raw": "{{baseSecurityUrl}}/users/2092",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
 							"path": [
 								"users",
-								"977"
+								"2092"
 							]
 						}
 					},
@@ -244,12 +248,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8094/security/users/get-user-hierarchy?userName=jasmin",
-							"protocol": "http",
+							"raw": "https://api.synectiks.net/security/users/get-user-hierarchy?userName=siddhesh",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"api",
+								"synectiks",
+								"net"
 							],
-							"port": "8094",
 							"path": [
 								"security",
 								"users",
@@ -258,7 +263,7 @@
 							"query": [
 								{
 									"key": "userName",
-									"value": "jasmin"
+									"value": "siddhesh"
 								}
 							]
 						}
@@ -419,7 +424,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/users/updateUserRoles?userName=helo-org-admin-user&roleId=60,61",
+							"raw": "{{baseSecurityUrl}}/users/updateUserRoles?userName=helo-user&roleId=2059,2060",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
@@ -430,7 +435,7 @@
 							"query": [
 								{
 									"key": "userName",
-									"value": "helo-org-admin-user"
+									"value": "helo-user"
 								},
 								{
 									"key": "roleId",
@@ -442,28 +447,27 @@
 					"response": []
 				},
 				{
-					"name": "addUsersToRoleGroup",
+					"name": "assingRoleGroupToUsers",
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleId\":2059,\r\n    \"userIds\":\"2107,2063\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseSecurityUrl}}/users/addUsersToRoleGroup?roleId=2059&userIds=2107,2063",
+							"raw": "{{baseSecurityUrl}}/users/assingRoleGroupToUsers",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
 							"path": [
 								"users",
-								"addUsersToRoleGroup"
-							],
-							"query": [
-								{
-									"key": "roleId",
-									"value": "2059"
-								},
-								{
-									"key": "userIds",
-									"value": "2107,2063"
-								}
+								"assingRoleGroupToUsers"
 							]
 						}
 					},
@@ -565,13 +569,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseSecurityUrl}}/users/disableGoogleMfa",
+							"raw": "{{baseSecurityUrl}}/users/disableMfa",
 							"host": [
 								"{{baseSecurityUrl}}"
 							],
 							"path": [
 								"users",
-								"disableGoogleMfa"
+								"disableMfa"
 							]
 						}
 					},
@@ -583,24 +587,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://40fglalyd0.execute-api.us-east-1.amazonaws.com/dev/users/forgot-password?userName=ABCD",
-							"protocol": "https",
+							"raw": "{{baseSecurityUrl}}/public/forgot-password?userName=helo-user",
 							"host": [
-								"40fglalyd0",
-								"execute-api",
-								"us-east-1",
-								"amazonaws",
-								"com"
+								"{{baseSecurityUrl}}"
 							],
 							"path": [
-								"dev",
-								"users",
+								"public",
 								"forgot-password"
 							],
 							"query": [
 								{
 									"key": "userName",
-									"value": "ABCD"
+									"value": "helo-user"
 								}
 							]
 						}
@@ -927,15 +925,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.synectiks.net/security/organization/getAllOrganizations",
-							"protocol": "https",
+							"raw": "{{baseSecurityUrl}}/organization/getAllOrganizations",
 							"host": [
-								"api",
-								"synectiks",
-								"net"
+								"{{baseSecurityUrl}}"
 							],
 							"path": [
-								"security",
 								"organization",
 								"getAllOrganizations"
 							]
@@ -949,18 +943,66 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.synectiks.net/security/organization/id/1058",
-							"protocol": "https",
+							"raw": "{{baseSecurityUrl}}/organization/id/2119",
 							"host": [
-								"api",
-								"synectiks",
-								"net"
+								"{{baseSecurityUrl}}"
 							],
 							"path": [
-								"security",
 								"organization",
 								"id",
-								"1058"
+								"2119"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile-by-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/profile-by-id/2119",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"profile-by-id",
+								"2119"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile-by-name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseSecurityUrl}}/organization/profile-by-name/TESTORG",
+							"host": [
+								"{{baseSecurityUrl}}"
+							],
+							"path": [
+								"organization",
+								"profile-by-name",
+								"TESTORG"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -1324,15 +1366,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.synectiks.net/security/roles/listAll",
-							"protocol": "https",
+							"raw": "{{baseSecurityUrl}}/roles/listAll",
 							"host": [
-								"api",
-								"synectiks",
-								"net"
+								"{{baseSecurityUrl}}"
 							],
 							"path": [
-								"security",
 								"roles",
 								"listAll"
 							]
@@ -1554,11 +1592,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseSecurityUrl}}/roles/get-role-group-details?userName=jasmin&roleId=5870",
+							"raw": "https://api.synectiks.net/security/roles/get-role-group-details?userName=jasmin&roleId=5870",
+							"protocol": "https",
 							"host": [
-								"{{baseSecurityUrl}}"
+								"api",
+								"synectiks",
+								"net"
 							],
 							"path": [
+								"security",
 								"roles",
 								"get-role-group-details"
 							],
